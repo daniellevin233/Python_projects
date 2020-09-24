@@ -1,0 +1,62 @@
+class SnakeGame {
+
+    static SnakeGame instance;
+    field Snake snake;
+    field boolean exit;
+    field int score;
+
+    constructor SnakeGame new() {
+        do Screen.clearScreen();
+        let exit = false;
+        let score = 0;
+        let snake = Snake.new(256, 256);
+
+        return this;
+    }
+
+    function void newInstance() {
+        let instance = SnakeGame.new();
+        return;
+    }
+
+    function SnakeGame getInstance() {
+        return instance;
+    }
+
+    method void dispose() {
+        do snake.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    method void run() {
+        do Output.printString("What the fuck??");
+        do Output.printString("What the fuck??");
+        var char key;
+        do snake.draw();
+
+        while (~exit) {
+            let key = Keyboard.keyPressed();
+            if (key = 130) { // Left
+                do snake.setDirection(76);
+            }
+            if (key = 131) { // Up
+                do snake.setDirection(85);
+            }
+            if (key = 132) { // Right
+                do snake.setDirection(82);
+            }
+            if (key = 133) { // Down
+                do snake.setDirection(68);
+            }
+            if (key = 140) { // Esc
+                let exit = true;
+            }
+
+            do snake.move();
+            do Sys.wait(50);
+        }
+
+        return;
+    }
+}

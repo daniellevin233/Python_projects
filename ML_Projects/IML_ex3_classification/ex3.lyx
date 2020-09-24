@@ -1,0 +1,1339 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass IEEEtran
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+מבוא למערכות לומדות
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+תרגיל
+\family roman
+\shape up
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Classification$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+דניאל לוין, מס' זהות: 
+\numeric on
+336462874
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Linear\,regression\,\,and\,\,the\,Likelihood\,function$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+1
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+\begin_inset Formula $a$
+\end_inset
+
+(
+\begin_inset Formula 
+\[
+l_{likelihood}(h,(x,y))=\frac{1}{\sqrt{2\pi\sigma^{2}}}exp\left(-\frac{\left(y-h(x)\right){}^{2}}{2\sigma^{2}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בהנחה שהדגימות הן 
+\begin_inset Formula $iid$
+\end_inset
+
+, נקבל כי הנראות מוגדרת כדלקמן:
+\begin_inset Formula 
+\[
+L_{S}(h)=\prod_{i=1}^{m}l_{likelihood}(h,(x_{i},y_{i}))=\frac{1}{\sigma^{m}\left(\sqrt{2\pi}\right)^{m}}exp\left(-\frac{1}{2\sigma^{2}}\cdot\sum_{i=1}^{m}\left(y_{i}-h(x_{i})\right)^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ומכיוון שקיבלנו פונקציה מונוטונית יורדת ב-
+\begin_inset Formula $\sum_{i=1}^{m}\left(y_{i}-h(x_{i})\right)^{2}$
+\end_inset
+
+, נסיק
+\end_layout
+
+\begin_layout Standard
+כי פונקציית המטרה הינה:
+\begin_inset Formula 
+\[
+h^{*}=\underset{h\in H}{argmax}L_{S}(h)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+מכיוון שפונקציה 
+\begin_inset Formula $L_{S}(h)$
+\end_inset
+
+שקיבלנו ב-
+\begin_inset Formula $a$
+\end_inset
+
+ מונוטונית יורדת ב-
+\begin_inset Formula $\sum_{i=1}^{m}\left(y_{i}-h(x_{i})\right)^{2}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+נקבל שמקסום של 
+\begin_inset Formula $L_{S}(h)$
+\end_inset
+
+ שקול למזעור של 
+\begin_inset Formula $(\ast)\sum_{i=1}^{m}\left(y_{i}-h(x_{i})\right)^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ניזכר כי בבעיית הרגרסיה הליניארית פונקציית המטרה היא:
+\begin_inset Formula 
+\[
+\tilde{L}_{S}(h)=\frac{1}{m}\sum_{i=1}^{m}l_{squaredLoss}(h,(x_{i},y_{i}))=\frac{1}{m}\sum_{i=1}^{m}(h(x_{i})-y_{i})^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ורצינו למזער את הפונקציה הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל:
+\begin_inset Formula 
+\[
+\tilde{h}^{*}=\underset{h\in H}{argmin}\tilde{L}_{S}(h)=\underset{h\in H}{argmin}\frac{1}{m}\sum_{i=1}^{m}(h(x_{i})-y_{i})^{2}=\underset{h\in H}{argmin}\sum_{i=1}^{m}(h(x_{i})-y_{i})^{2}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\underset{h\in H}{argmin}\sum_{i=1}^{m}(y_{i}-h(x_{i}))^{2}\overset{\ast}{\Leftrightarrow}\underset{h\in H}{argmax}L_{S}(h)=h^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מכך נסיק כי הבעיות הללו שקולות, הרי מתקיים 
+\begin_inset Formula $\tilde{h}^{*}=h^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ROC\,Curve\,and\,Random\,Classification$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+תשובה: 
+\begin_inset Formula $t=1-p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מכיוון שהפתלגות 
+\begin_inset Formula $D$
+\end_inset
+
+ בלתי-תלויה בהתפלגות של 
+\begin_inset Formula $z\sim U(0,1)$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $TPR(t)=p$
+\end_inset
+
+ משמע 
+\begin_inset Formula $z$
+\end_inset
+
+ מוגרל מקטע באורך 
+\begin_inset Formula $p$
+\end_inset
+
+, כך שהוא גדול מ-
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כלומר 
+\begin_inset Formula $z\in[1-p,1]$
+\end_inset
+
+, ונציין כי 
+\begin_inset Formula $P_{D}(h_{t}(x)=1|y=1)=P(z\in[1-p,1])=p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+תשובה: 
+\begin_inset Formula 
+\[
+FPR(t)=P_{D}(h_{t}(x)=1|y=0)=P_{D}(h_{t}(x)=1)=P_{D}(h_{t}(x)=1|y=1)=TPR(t)=p
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר ה-
+\begin_inset Formula $FPR$
+\end_inset
+
+ ו-
+\begin_inset Formula $TPR$
+\end_inset
+
+ אינם תלויים בערך ה-
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+וזה נובע ישירות מהגדרת הממיין 
+\begin_inset Formula $(classifier)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בנוסף עקומת ה-
+\begin_inset Formula $ROC$
+\end_inset
+
+ שמייצגת יחס בין 
+\begin_inset Formula $TPR$
+\end_inset
+
+ל-
+\begin_inset Formula $FPR$
+\end_inset
+
+ תיראה 
+\end_layout
+
+\begin_layout Standard
+כפונקציה 
+\begin_inset Formula $y=x$
+\end_inset
+
+, כלומר הממיין שמוגדר שקול להטלת מטבע הוגן.
+\end_layout
+
+\begin_layout Standard
+התוצאה מאוד הגיונית, הרי ההתפלגות של 
+\begin_inset Formula $threshold\,z$
+\end_inset
+
+ הינה אחידה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Monotonicity\,of\,the\,ROC\,curve$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+נשים לב כי אם אנחנו מגדילים את 
+\begin_inset Formula $\theta$
+\end_inset
+
+ )
+\begin_inset Formula $threshold$
+\end_inset
+
+( כמות התגים החיוביים )
+\numeric on
+1
+\numeric off
+(,
+\end_layout
+
+\begin_layout Standard
+קטנה, הרי אנחנו מזיזים 
+\begin_inset Formula $\theta$
+\end_inset
+
+ שמאלה על הציר.
+ ניזכר כי 
+\begin_inset Formula $FPR=\frac{FP}{N}$
+\end_inset
+
+, 
+\begin_inset Formula $TPR=\frac{TP}{P}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+מכיוון שככל שה-
+\begin_inset Formula $\theta$
+\end_inset
+
+ עולה, כמות התגים )
+\begin_inset Formula $labels$
+\end_inset
+
+( החיוביים קטנה,
+\end_layout
+
+\begin_layout Standard
+נסיק כי 
+\begin_inset Formula $TP$
+\end_inset
+
+ וגם 
+\begin_inset Formula $FP$
+\end_inset
+
+ לא עולים, כלומר התנהגותם זהה, ולכן מכיוון שעקומה עוברת 
+\end_layout
+
+\begin_layout Standard
+מנקודה 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ לנקודה 
+\begin_inset Formula $(1,1)$
+\end_inset
+
+, והיא נמצאת מעל האלכסון 
+\begin_inset Formula $y=x$
+\end_inset
+
+, נסיק כי היא 
+\end_layout
+
+\begin_layout Standard
+חייבת לגדול.
+ כלומר ככל שה-
+\begin_inset Formula $\theta$
+\end_inset
+
+ קטן 
+\begin_inset Formula $FPR$
+\end_inset
+
+ ו-
+\begin_inset Formula $TPR$
+\end_inset
+
+ לא קטנים.
+ 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a$
+\end_inset
+
+(
+\begin_inset Formula 
+\[
+h_{D}(x)=sign\left(\left\langle (x;1),w\right\rangle \right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נגדיר 
+\begin_inset Formula 
+\[
+w=\left(\left(\Sigma^{-1}(\mu_{1}-\mu_{0})\right)_{1},\ldots,\left(\Sigma^{-1}(\mu_{1}-\mu_{0})\right)_{d},-\frac{1}{2}(\mu_{1}+\mu_{0})^{T}\Sigma^{-1}(\mu_{1}+\mu_{0})+\log\frac{\pi_{1}}{\pi_{0}}\right)^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אזי:
+\begin_inset Formula 
+\[
+h_{D}(x)=sign\left(\left\langle (x;1),w\right\rangle \right)=sign\left(x^{T}\Sigma^{-1}(\mu_{1}-\mu_{0})-\frac{1}{2}\left(\mu_{1}+\mu_{0}\right)^{T}\Sigma^{-1}(\mu_{1}+\mu_{0})+\log\frac{\pi_{1}}{\pi_{0}}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=sign\left(\left(x^{T}\Sigma^{-1}\mu_{1}-\frac{1}{2}\mu_{1}^{T}\Sigma^{-1}\mu_{1}+\log\pi_{1}\right)-\left(x^{T}\Sigma^{-1}\mu_{0}-\frac{1}{2}\mu_{0}^{T}\Sigma^{-1}\mu_{0}+\log\pi_{0}\right)\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=sign(\delta_{1}-\delta_{0})\overset{\ast}{=}argmax_{y=\pm1}\delta_{y}(x)=\hat{f}_{LDA}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula $\ast$
+\end_inset
+
+ נובע מכך שפונקציית סימן על ההפרש שקולה ל-
+\begin_inset Formula $argmax$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+עבור 
+\begin_inset Formula $y\in\{\pm1\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $i$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename cdf_plot.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pdf_plot.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ii$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename IML_ex3/h_plot.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $iii$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename cdf_0.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename cdf_1.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $iv$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename tpr_fpr.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Question_5_b_v.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $vi$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Question_5_b_vi.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $vii$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Question_5_b_vii.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Some\,important\,little\,questions$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+לא!, לדוגמה כאשר אנחנו נותנים ערך גבוה יותר לדיוק ולא למדד שגיאה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+כן!
+\end_layout
+
+\begin_layout Standard
+נשים לב כי לכל 
+\begin_inset Formula $x\in[0,1](\Leftrightarrow FPR_{axes})$
+\end_inset
+
+, מתקיים: 
+\begin_inset Formula 
+\[
+TPR_{1}(x)=h_{1}(x)\geq h_{2}(x)=TPR_{2}(x)(\ast)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+תשובה: תמיד עדיף להשתמש ב-
+\begin_inset Formula $h_{1}$
+\end_inset
+
+ בהינתן כי 
+\begin_inset Formula $AUC(h_{1})>AUC(h_{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הסבר: מכיוון שאנחנו לא שולטים במדד השגיאה )ציר ה-
+\begin_inset Formula $FPR$
+\end_inset
+
+(, והראינו כי
+\end_layout
+
+\begin_layout Standard
+לכל סף ונקודה על ציר ה-
+\begin_inset Formula $FPR$
+\end_inset
+
+ שנקבעת באופן חד-חד-ערכי ובלתי-תלוי,
+\end_layout
+
+\begin_layout Standard
+מתקיים כי מדד הדיוק של היפוטזה בעלת שטח מתחת לעקומה לא יותר נמוך 
+\end_layout
+
+\begin_layout Standard
+מאשר זה של ההיפוטזה הנתונו האחרת,
+\end_layout
+
+\begin_layout Standard
+לכן באף סף )
+\begin_inset Formula $threshold$
+\end_inset
+
+( שלא נבחר, לא נרוויח כלום עם
+\begin_inset Formula $h_{2}$
+\end_inset
+
+ ביחס ל-
+\begin_inset Formula $h_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לדוגמא: )
+\begin_inset Formula $h_{1}$
+\end_inset
+
+ - כחול, 
+\begin_inset Formula $h_{2}$
+\end_inset
+
+- סגול(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ROC_curves.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+האזורים שלא אתחשב בהם הם: 
+\begin_inset Formula $(0.3,0.5)\cup(0.7,1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הסבר: בטווח 
+\begin_inset Formula $(0.3,0.5)$
+\end_inset
+
+ 
+\begin_inset Formula $TPR$
+\end_inset
+
+קבועה ולכן אין טעם להתבונן באזור הזה.
+\end_layout
+
+\begin_layout Standard
+טווח 
+\begin_inset Formula $(0.7,1)$
+\end_inset
+
+ הוא הטווח שבו 
+\begin_inset Formula $TPR(x)<x$
+\end_inset
+
+ שזה אומר שהתחזית יותר גרועה
+\end_layout
+
+\begin_layout Standard
+מהטלת מטבע הוגן.
+ במילים אחרות עקומה נמצאת מתחת לאלכסון.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $LDA$
+\end_inset
+
+- לא, כי במודל 
+\begin_inset Formula $LDA$
+\end_inset
+
+אנחנו מניחים התפלגות נורמלית על ערכי 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+עבור כל ערך של 
+\begin_inset Formula $y$
+\end_inset
+
+, ולכן המטרה שלנו היא לא לקרב התפלגות אמיתית של 
+\begin_inset Formula $X,Y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אלא מחפשים 
+\begin_inset Formula $y$
+\end_inset
+
+ שמקבל הסתברות מירבית עבור ערך נתון של דגימה 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $logistic\,regerssion$
+\end_inset
+
+ - כן, במודל הזה אנחנו מנסים לקרב את ההתנהגות של 
+\end_layout
+
+\begin_layout Standard
+פונקציה 
+\begin_inset Formula $y(x)$
+\end_inset
+
+ בעזרת גרף כלשהו, כלומר אנחנו לא מניחים משהו לגבי התפלגות
+\end_layout
+
+\begin_layout Standard
+של 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ אלא משתמשים ב-
+\begin_inset Formula $ERM$
+\end_inset
+
+ כדי לשערך את ההתפלגות של 
+\begin_inset Formula $X,Y$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+ולהפעיל את השערוך הזה על דגימות חדשות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Hands-on$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ROC_logistic_regression.jpeg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+טעויות ממוצעות שקיבלתי:
+\begin_inset Formula 
+\[
+for\,k=1:\,\,0.1781
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+for\,k=2:\,\,0.2025
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+for\,k=5:\,\,0.1942
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+for\,k=10:\,\,0.2120
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+for\,k=100:\,\,0.2693
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ii$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+ערכים עצמיים שקיבלתי עבור 
+\begin_inset Formula $QDA$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+for\,\Sigma_{0}:\,\,[2.85504974,2.22807731,5.43591790,3.60261221,4.17981234]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+for\,\Sigma_{1}:\,\,[1.75003824,0.52802454,0.2862677,0.13108257,0.0123642]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ערכים עצמיים שקיבלתי עבור 
+\begin_inset Formula $LDA$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+[2.66435202,1.81741758,0.90337853,0.20985462,0.59979543]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $iii$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+train\text{\_}error(QDA)=0.4021382949180784
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+train\text{\_}error(LDA)=0.3171341294084976
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $iv$
+\end_inset
+
+(
+\begin_inset Formula 
+\[
+test\text{\_}error(QDA)=0.41039999999999993
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+test\text{\_}error(LDA)=0.31920000000000004
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

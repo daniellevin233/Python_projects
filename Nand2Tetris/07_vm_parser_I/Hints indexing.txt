@@ -1,0 +1,31 @@
+Unit 7.5:
+
+	pop local i     		 	minute 6-7
+	push local i 			   	minute 7:50
+
+	local, argument, this, that minute 10:10
+
+	push constant				minute 12:50
+
+	push/pop static				minute 16:30
+
+	push/pop temp 				minute 22:00
+
+	push/pop pointer 0/1		minute 24:10
+	
+	
+Unit 7.7:
+	
+	Standard VM mapping on HACK platform - minute 6:00
+	
+Unit 7.8:
+	The proposed implementation -   minute 1:00
+	Proposed design					minute 4:10
+	
+	Parser API						minute 9:00
+	List of existing commands		minute 9:23
+	
+	CodeWriter API					minute 11:10
+	
+Unit 7.9:
+	Development plan, (testing)		minute 10:10

@@ -1,0 +1,63 @@
+/**
+* This chip is an extension of the book CPU by using the extended ALU.
+* More specificly if instruction[15]==0 or (instruction[14] and instruction[13] equals 1)
+* the CpuMul behave exactly as the book CPU.
+* While if it is C instruction and instruction[13] == 0 the output will be D*A/M
+* (according to instruction[12]).
+* Moreover, if it is c instruction and instruction[14] == 0 it will behave as follows:
+*
+* instruction:  | 12 | 11 | 10 |
+* _____________________________
+* shift left D  | 0  | 1  | 1  |
+* shift left A  | 0  | 1  | 0  |
+* shift left M  | 1  | 1  | 0  |
+* shift right D | 0  | 0  | 1  |
+* shift right A | 0  | 0  | 0  |
+* shift right M | 1  | 0  | 0  |
+**/
+
+CHIP CpuMul{
+
+    IN  inM[16],         // M value input  (M = contents of RAM[A])
+        instruction[16], // Instruction for execution
+        reset;           // Signals whether to re-start the current
+                         // program (reset=1) or continue executing
+                         // the current program (reset=0).
+
+    OUT outM[16],        // M value output
+        writeM,          // Write into M?
+        addressM[15],    // Address in data memory (of M)
+        pc[15];          // address of next instruction
+
+     PARTS:
+     // RegA
+     Mux16 (a=instruction, b=aluout, sel=instruction[15], out=toareg);
+     And (a=instruction[15], b=instruction[5], out=cinstdestA);
+     Not (in=instruction[15], out=notcinst);
+     Or (a=notcinst, b=cinstdestA, out=loadtoA);
+     ARegister (in=toareg, load=loadtoA, out[15]=false, out[0..14]=addressM, out=regaout);
+
+     //RegD
+     And (a=instruction[15], b=instruction[4], out=loadtoD);
+     DRegister (in=aluout, load=loadtoD, out=dreg);
+
+     //ALU
+     ExtendAlu (x=dreg, y=mora, instruction=instruction[6..14], out=aluout, out=outM, zr=zr, ng=ng);
+     Mux16 (a=regaout, b=inM, sel=instruction[12], out=mora);
+     And (a=instruction[3], b=instruction[15], out=write);
+     And (a=true, b=write, out=writeM);
+
+     // Checks whether need to jump
+     Or (a=ng, b=zr, out=zerorneg);
+     Not (in=zerorneg, out=pos);
+     And (a=instruction[0], b=pos, out=jumpmore);
+     And (a=instruction[1], b=zr, out=jumpequals);
+     And (a=instruction[2], b=ng, out=jumpless);
+     Or (a=jumpmore, b=jumpequals, out=orjump);
+     Or (a=jumpless, b=orjump, out=orjump2);
+     And (a=orjump2, b=instruction[15], out=orjump3);
+
+     Or (a=orjump3, b=reset, out=notinc);
+     Not (in=notinc, out=increment);
+     PC (in=regaout, load=orjump3, inc=increment, reset=reset, out[0..14]=pc, out[15]=false);
+}

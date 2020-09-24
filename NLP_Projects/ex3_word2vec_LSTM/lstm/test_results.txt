@@ -1,0 +1,3 @@
+Test accuracy: 0.0
+Test loss: 0.7255805552005767
+Weight dec: 0.0001

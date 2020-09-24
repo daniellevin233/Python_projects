@@ -1,0 +1,32 @@
+daniellevin
+336462874
+Daniel_Levin
+
+I discussed the exercise with: Peleg Labsupport
+
+==========================================================
+=  README for ex2: Functions, string parsing, user input =
+==========================================================
+This exercise is about writing parameterized functions, string parsing and user input.
+It includes 6 files -
+    1.convert_spoon_to_cup.py - converting the liquid in spoons to the liquid in cups
+    2.calculate_mathematical_expression.py - calculating mathematical operation from the user
+    3.largest_and_smallest.py - finding the biggest and the smallest numbers out of 2 given numbers
+    4.quadratic_equations.py - finding the roots of quadratic equations with the parameters from the user
+    5.shapes.py - counting the area of shapes with parameters from the user
+    6.temperature.py - checking if it is summer for Agrid, or not yet
+
+==================
+=  Description:  =
+==================
+running the program 'convert_spoon_to_cup.py' will provide the access to the certain function
+running the program 'calculate_mathematical_expression.py' will provide the access to the certain function
+running the program 'largest_and_smallest.py' will provide the access to the certain function
+running the program 'quadratic_equations.py' will run the function which will ask for the input
+running the program 'shapes.py' will run the function which will ask for the input
+running the program 'temperature.py' will provide the access for the certain function
+======================
+=  Special Comments  =
+======================
+
+What's up Doc?

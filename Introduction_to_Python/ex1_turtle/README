@@ -1,0 +1,21 @@
+daniellevin
+336462874
+Daniel_Levin
+
+I discussed the exercise with: -
+
+=============================
+=  README for ex1: Hello Turtle
+=============================
+
+
+==================
+=  Description:  = drawing the bed of flowers in turtle and realization of mathematical functions
+==================
+
+
+======================
+=  Special Comments  =
+======================
+
+What's up Doc?

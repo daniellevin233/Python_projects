@@ -1,0 +1,53 @@
+CHIP Mul{
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+    Mux16 (a[0..15]=false, b=a, sel=b[0], out=b0);
+    ShiftLeft (in=a, out=shift1);
+    Mux16 (a[0..15]=false, b=shift1, sel=b[1], out=b1);
+    ShiftLeft (in=shift1, out=shift2);
+    Mux16 (a[0..15]=false, b=shift2, sel=b[2], out=b2);
+    ShiftLeft (in=shift2, out=shift3);
+    Mux16 (a[0..15]=false, b=shift3, sel=b[3], out=b3);
+    ShiftLeft (in=shift3, out=shift4);
+    Mux16 (a[0..15]=false, b=shift4, sel=b[4], out=b4);
+    ShiftLeft (in=shift4, out=shift5);
+    Mux16 (a[0..15]=false, b=shift5, sel=b[5], out=b5);
+    ShiftLeft (in=shift5, out=shift6);
+    Mux16 (a[0..15]=false, b=shift6, sel=b[6], out=b6);
+    ShiftLeft (in=shift6, out=shift7);
+    Mux16 (a[0..15]=false, b=shift7, sel=b[7], out=b7);
+    ShiftLeft (in=shift7, out=shift8);
+    Mux16 (a[0..15]=false, b=shift8, sel=b[8], out=b8);
+    ShiftLeft (in=shift8, out=shift9);
+    Mux16 (a[0..15]=false, b=shift9, sel=b[9], out=b9);
+    ShiftLeft (in=shift9, out=shift10);
+    Mux16 (a[0..15]=false, b=shift10, sel=b[10], out=b10);
+    ShiftLeft (in=shift10, out=shift11);
+    Mux16 (a[0..15]=false, b=shift11, sel=b[11], out=b11);
+    ShiftLeft (in=shift11, out=shift12);
+    Mux16 (a[0..15]=false, b=shift12, sel=b[12], out=b12);
+    ShiftLeft (in=shift12, out=shift13);
+    Mux16 (a[0..15]=false, b=shift13, sel=b[13], out=b13);
+    ShiftLeft (in=shift13, out=shift14);
+    Mux16 (a[0..15]=false, b=shift14, sel=b[14], out=b14);
+    ShiftLeft (in=shift14, out=shift15);
+    Mux16 (a[0..15]=false, b=shift15, sel=b[15], out=b15);
+
+    Add16 (a=b0, b=b1, out=c0);
+    Add16 (a=c0, b=b2, out=c1);
+    Add16 (a=c1, b=b3, out=c2);
+    Add16 (a=c2, b=b4, out=c3);
+    Add16 (a=c3, b=b5, out=c4);
+    Add16 (a=c4, b=b6, out=c5);
+    Add16 (a=c5, b=b7, out=c6);
+    Add16 (a=c6, b=b8, out=c7);
+    Add16 (a=c7, b=b9, out=c8);
+    Add16 (a=c8, b=b10, out=c9);
+    Add16 (a=c9, b=b11, out=c10);
+    Add16 (a=c10, b=b12, out=c11);
+    Add16 (a=c11, b=b13, out=c12);
+    Add16 (a=c12, b=b14, out=c13);
+    Add16 (a=c13, b=b15, out=out);
+}

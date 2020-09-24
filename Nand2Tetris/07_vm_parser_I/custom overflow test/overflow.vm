@@ -1,0 +1,112 @@
+//// EQ
+// x positive y negative, overflow
+push constant 32767
+push constant 1
+neg
+eq
+
+// x negative y positive, overflow
+push constant 32768
+neg
+push constant 1
+eq
+
+// both positive, equal
+push constant 555
+push constant 555
+eq
+
+// both positive, not equal
+push constant 555
+push constant 556
+eq
+
+
+// both negative, equal
+push constant 555
+neg
+push constant 555
+neg
+eq
+
+// both negative, not equal
+push constant 555
+neg
+push constant 556
+neg
+eq
+
+
+//// LT
+// x positive y negative, overflow
+push constant 32767
+push constant 1
+neg
+lt
+
+// x negative y positive, overflow
+push constant 32768
+neg
+push constant 1
+lt
+
+// both positive, lt
+push constant 554
+push constant 555
+lt
+
+// both positive, not lt
+push constant 555
+push constant 555
+lt
+
+// both negative, lt
+push constant 556
+neg
+push constant 555
+neg
+lt
+
+// both negative, not lt 
+push constant 555
+neg
+push constant 555
+neg
+lt
+
+//// GT
+// x positive y negative, overflow
+push constant 32767
+push constant 1
+neg
+gt
+
+// x negative y positive, overflow
+push constant 32768
+neg
+push constant 1
+gt
+
+// both positive, gt
+push constant 555
+push constant 554
+gt
+
+// both positive, not gt
+push constant 555
+push constant 555
+gt
+
+// both negative, gt
+push constant 554
+neg
+push constant 555
+neg
+gt
+
+// both negative, not gt
+push constant 555
+neg
+push constant 555
+neg
+gt

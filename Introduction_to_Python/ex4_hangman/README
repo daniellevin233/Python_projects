@@ -1,0 +1,30 @@
+daniellevin
+336462874
+Daniel_Levin
+
+I discussed the exercise with: Peleg LabSupport, Shai Gindon
+
+=================================
+=  README for ex4: Game Hangman =
+=================================
+This exercise contains realization of Hangman game
+It includes one file:
+    hangman.py - The hangman game, you can read more about the game here: https://en.wikipedia.org/wiki/Hangman_(game)
+
+
+==================
+=  Description:  =
+==================
+Running the program 'hangman.py' will start the game process i.e. open the interface of the game,
+close interface window to exit.
+    Functions:
+    run_single_game(words_list) - activates the game (loop for one game) in addition to the word_lists that was passed,
+            choosing randomally the word from the list and starting the game with this word as clue.
+            The function will stop if the user guesses the word or if the user makes maximal quantity of errors.
+    main() - calls to function run_single_game and continues until user will not push 'No More!'.
+
+======================
+=  Special Comments  =
+======================
+
+What's up Doc?

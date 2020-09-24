@@ -1,0 +1,13 @@
+﻿influenza cough fatigue headache nausea
+meningitis headache fever irritability rigidity
+healthy 
+mono fatigue sore_throat headache
+cold cough headache
+strep sore_throat fever
+
+# recs = parse_data("tiny_data.txt")
+# symptoms = []
+# for cur_rec in recs:
+#     symptoms += cur_rec.symptoms
+# build_tree(recs, symptoms)
+# print(optimal_tree(recs, symptoms, 3).data)

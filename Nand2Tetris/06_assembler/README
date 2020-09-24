@@ -1,0 +1,27 @@
+matancha, daniellevin
+===============================================================================
+Matan Toledano, ID 313591935, matan.toledano@mail.huji.ac.il
+Daniel Levin, ID 336462874, daniil.levin@mail.huji.ac.il
+===============================================================================
+
+                           Project 6 - Developing a Hack Assembler
+                           ---------------------------------
+
+
+Submitted Files
+---------------
+command_factory.py - factory for initialising commands objects
+command.py - abstract class representing a command in Hack assembly language
+c_command.py - class representing command of type C
+a_command.py - class representing command of type A
+l_command.py - class representing command of type L
+asm_parser.py - class for parsing files written in Hack assembly language
+Assembler.py - main file, executing the program, gets one parameter - assembly file to be translated, creates a
+hack file with the same name as given assembly file in the same folder
+symbol_table.py - class representing a mapping of variables, both predefined symbols and symbols created by program
+Makefile - grant execution permissions so that this project is able to run on the graders' computers
+
+Remarks
+-------
+We decided to create abstract class "command" and make all existing commands inherit from it, thus it allows more
+freedom in potential program extensions

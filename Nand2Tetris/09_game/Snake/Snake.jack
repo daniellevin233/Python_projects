@@ -1,0 +1,111 @@
+class Snake {
+
+    field int x, y;
+    field int length;
+    field char direction;
+    field int speed;
+    field Array rectangles_x;
+    field Array rectangles_y;
+
+    constructor Snake new(int startX, int startY) {
+        let x = startX;
+        let y = startY;
+        let speed = 5;
+        let direction = 82; // 'R'
+        let length = 3;
+        let rectangles_x = Array.new(length);
+        let rectangles_y = Array.new(length);
+        let rectangles_x[0] = 256;
+        let rectangles_y[0] = 128;
+
+        let rectangles_x[1] = 261;
+        let rectangles_y[1] = 128;
+
+        let rectangles_x[2] = 266;
+        let rectangles_y[2] = 128;
+
+        return this;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    method void setDirection(char new_direct) {
+        let direction = new_direct;
+        return;
+    }
+
+    method void draw() {
+        var int i;
+
+        let i = 0;
+        while (i < length) {
+            do Screen.drawRectangle(rectangles_x[i], rectangles_y[i], rectangles_x[i]+5, rectangles_y[i]+5);
+            let i = i + 1;
+        }
+        return;
+    }
+
+    method void show() {
+        do Screen.setColor(true);
+        do draw();
+        return;
+    }
+
+    method void hide() {
+        do Screen.setColor(false);
+        do draw();
+        return;
+    }
+
+    method void move() {
+        var Array temp_x;
+        var Array temp_y;
+        var int i;
+
+        if (direction = 82) { // 'R'
+            let x = x + speed;
+        }
+        if (direction = 76) { // 'L'
+            let x = x - speed;
+        }
+        if (direction = 85) { // 'U'
+            let y = y - speed;
+        }
+        if (direction = 68) { // 'D'
+            let y = y + speed;
+        }
+
+        let temp_x = Array.new(length);
+        let temp_y = Array.new(length);
+
+        let i = 0;
+        while (i < length - 1) {
+            let temp_x[i] = rectangles_x[i+1];
+            let temp_y[i] = rectangles_y[i+1];
+            let i = i + 1;
+        }
+
+        let temp_x[length-1] = x;
+        let temp_y[length-1] = y;
+
+        let i = 0;
+        while (i < length) {
+            let rectangles_x[i] = temp_x[i];
+            let rectangles_y[i] = temp_y[i];
+            let i = i + 1;
+        }
+        do temp_x.dispose();
+        do temp_y.dispose();
+//        do rectangles_x.dispose();
+//        let rectangles_x = temp_x;
+//        do rectangles_y.dispose();
+//        let rectangles_y = temp_y;
+
+        do draw();
+
+        return;
+    }
+}

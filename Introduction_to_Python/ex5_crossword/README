@@ -1,0 +1,47 @@
+daniellevin
+336462874
+Daniel_Levin
+
+itzikf100
+203208798
+Itzik_Foichtvanger
+
+We discussed the exercise with: each other
+
+=================================================================================
+=  README for ex5: Crossword realisation, two dimensional and three dimensional =
+=================================================================================
+This exercise is about working with text files, strings, lists and different functions
+It includes two files:
+    1. crossword.py - searching words in two dimensional list
+    2. crossword3d.py - searching words in three dimensional list
+
+==================
+=  Description:  =
+==================
+Running the program 'crossword.py' from terminal with passing true arguments will create the text file in current folder
+The first argument - file with words for searching
+The second argument - file with matrix
+The third argument - path for file that will be changed(!) with counted words
+The forth argument - string of directions for searching
+The constant values and structure of functions explained in programme code
+
+Running the program 'crossword3d.py' from terminal with passing true arguments will create the text file
+in current folder.
+The first argument - file with words for searching
+The second argument - file with matrices that represent three dimensional matrix
+The third argument - path for file that will be changed(!) with counted words
+The forth argument - string of directions for searching
+The constant values and structure of functions explained in programme code
+
+======================
+=  Special Comments  =
+======================
+In the file crossword.py between lines 343 and 344 has to appear the next line:
+# new_path = os.path.basename(outfile_path)  # create it in the current folder
+In addition to exercise in the case of existence the given path for output file we need to create new file with similar
+    name in the current folder. This was the meaning of this line. But in the process of assignment testers returned
+mistakes on tests many_cats, palindrom and basic_all_direcitons despite of the fact that all these searchings work true
+and also with files in another folders (specifically the case of finding the output file in another folder) codes
+are working true. So I put this line of to pass testers.
+What's up Doc?

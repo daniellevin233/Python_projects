@@ -1,0 +1,18 @@
+function Main.call 1
+push argument 0
+pop local 0
+label WHILE_IF_0
+push argument 0
+push local 0
+push local 0
+call Math.multiply 2
+lt
+not
+if-goto WHILE_END_0
+push argument 0
+call Math.sqrt 1
+pop local 0
+goto WHILE_IF_0
+label WHILE_END_0
+push local 0
+return

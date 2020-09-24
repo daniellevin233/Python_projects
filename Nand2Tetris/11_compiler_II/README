@@ -1,0 +1,22 @@
+matancha, daniellevin
+===============================================================================
+Matan Toledano, ID 313591935, matan.toledano@mail.huji.ac.il
+Daniel Levin, ID 336462874, daniil.levin@mail.huji.ac.il
+===============================================================================
+
+                           Project 11 - Compiler II - syntax analysis
+                           ------------------------------------------
+
+
+Submitted Files
+---------------
+jack_analyzer.py - Main flow of program aimed at translating jack code to xml file.
+jack_tokenizer.py - Tokenizer for jack classes
+vm_writer.py - Class that writes the resulting vm file
+symbol_table.py - Maintains symbol table for class and subroutine scope
+compilation_engine.py - Compiles Jack code to xml file
+Makefile - grant execution permissions so that this project is able to run on the graders' computers
+README
+
+Remarks
+-------

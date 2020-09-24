@@ -1,0 +1,24 @@
+matancha, daniellevin
+===============================================================================
+Matan Toledano, ID 313591935, matan.toledano@mail.huji.ac.il
+Daniel Levin, ID 336462874, daniil.levin@mail.huji.ac.il
+===============================================================================
+
+                           Project 2 - Combinational Chips
+                           ------------------------------- 
+  
+
+Submitted Files
+---------------
+README - This file.
+HalfAdder.hdl - The HalfAdder chip.
+FullAdder.hdl - The FullAdder chip.
+Inc16.hdl - The Inc16 chip.
+ALU.hdl - The ALU chip.
+Add16.hdl - The Add16 chip.
+ShiftLeft.hdl - The ShiftLeft chip.
+ShiftRight.hdl - The ShiftRight chip.
+Mul.hdl - The Mul chip.
+
+Remarks
+-------

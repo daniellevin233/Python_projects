@@ -1,0 +1,41 @@
+Program flow API:
+	label c 
+		This command labels the current location in the function’s code.  
+		Only labeledlocations can be jumped to from other parts of the program.  
+		The label c is anarbitrary  string  composed  of  letters,  numbers,  and  the  special  characters  “_”,“:”, and “.”.  
+		The scope of the label is the current function. 
+
+	goto c 
+		This  command  effects  a  "goto"  operation,  causing  execution  to  continue  from
+		the location marked by the c label.
+		The jump destination must be located in the same function. 
+		
+	if-goto c 
+		This  command  effects  a  "conditional  goto"  operation.    
+		The  stack’s  topmost  value is popped; if the value is not zero,
+		execution continues from the location marked by the c label;
+		otherwise, execution continues from the next command in the program. 
+		The jump destination must be located in the same function.
+
+Functions:
+
+	call functionName nArgs - pseudocode - Unit 8.6 min 13:30
+	
+	function functionName nVars - pseudocode - Unit 8.6 min 15:45
+
+	return - pseudocode - Unit 8.6 min 21:25
+
+	Sys.vm file - Unit 8.9 min 17:25
+	
+	bootstrap code - SP=256
+					 call Sys.init
+	
+	Sys.init calls main function of the file Main.vm and enters the infinite loop
+
+Existing files modifications:
+	Unit 8.8 - 	
+					Main - process either directory containing .vm files resulting in dir.asm file or
+							single file.vm resulting in file.asm
+							
+					Parser - add new functions (done)
+					Writer - writeInit - Bootstrap code and recheck setFileName functionality

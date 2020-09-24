@@ -1,0 +1,125 @@
+daniellevin
+336462874
+Daniel_Levin
+
+I discussed the exercise with: MYSELF
+
+========================================================================
+=  README for ex8: Realisation of  "Asteroids" game with Object-oriented
+programming  =
+========================================================================
+
+It includes four files:
+    1. asteroids_main.py - the main file containing class Game_Runner
+    representing the game itself.
+    2. ship.py - the file containing class Ship representing ship of the game
+    3. asteroid.py - the file containing class Asteroid representing
+       each asteroid of the game
+    4. torpedo.py - the file containing class Torpedo representing
+       each torpedo of the game
+
+==================
+=  Description:  =
+==================
+
+Running the program 'ex8.py' will open the game screen
+and start the asteroids game there:
+
+============================
+= Description of the game: =
+============================
+
+Your goal is to destroy all asteroids on the screen by striking torpedoes
+with ship that is under your control. Your aim is to do it before your lose
+all of your lives
+1) You can turn it around itself:
+the right button - on clock direction
+the left button - against the clock direction
+2) You can accelerate it:
+the up button - accelerate the ship
+3) You can strike with torpedoes:
+the space button - striking the torpedo
+After beating the asteroid it will split to some more asteroids.
+
+To quit the game screen before game finishing:
+press the button "Quit" appearing on the game screen
+
+Good luck!
+
+============================
+= Additional commentaries: =
+============================
+
+class GameRunner is used for running the game
+it contains the next methods:
+_game_loop(self) - one loop of the game - the perfect solution for game
+    realisation of passive type.
+_move_object(self, obj) - this method is implemented for moving any object
+    in the game, it was possible to create separate methods for different
+    object. The benefit would be that then we should not agree getters
+of the classes representing objects but simply to move them separately
+one more possible benefit is if we want to move each object differently
+so we dont need to create something with the code but only change the
+proper method that is responsible for this object
+    The benefit of our impementation is the shorter code and better
+    modularity.
+__check_ast_with_ship_intersection(self, asteroid),
+__check_ast_with_torp_intersection(self, asteroid, torpedo):
+this two methods are similar to each other but they work for different
+    objects
+    The idea is to check the intersection of objects on each loop of the game
+    and then realisation of relevant changes in the game process in accordance
+    to result.
+    It is useful for passive game realisation.
+Beside all this staff next parameters if the class was initialised in the
+constructor:
+delta_x, delta_y - are created for shorting the code and comfortable using
+    of them in parts that containg physical formulas
+ship - in the game we have only one ship that the user can move,
+so we use this ship everywhere in the code. That is why it is
+smart to put it on internal variable. If we were had some more
+ship we should create another data structure for working with
+    ships, for example how it was done for asteroids:
+_init_asteroids_lst(self): here we are constructing the list of
+asteroids that are in the game, in such way it is comfortable every time
+that we wanna get to asteroids we can only run on list of them and do
+another operatons. The list is good because all that is important is to
+keep asteroids in iterable data structure.
+The same thing is realisated for the torpedoes that their essence in the game
+    border is similar to this of asteroids - checking intersections, running
+on it in each loop of the game etc.
+user_points - in each moment of the game we need to keep the users points
+to current point of the game, so it will be logical to denote internal
+variable for it, and using it on every proper moment that we want in
+    the proccess of the game.
+The same thing is for ship_lifes - we cant get the access to it
+    from gui - (actually screen file), thats why we should create
+the internal variable for this property of the ship. The only ship is
+    constructed in the same init so it is good to create here the
+ship_lifes variable. Another possible solution is to add this property to
+ships quality, but we have only one ship in the game, so it will also be good
+solution.
+
+class Asteroid contains getters setters and one method:
+    has_intersection(self, obj) - this method is universal for all objects
+        of the game, thats why it very useful method that is used every
+        time that we need to check intersections in the game
+    was added parameter of the asteroid - radius. It would be better to
+    denote the radius for every asteroid separately outside the class
+    because maybe we will want to change to fix different radiuses for
+    asteroids so we would do it from outside
+
+class Ship contains only getters and setters, so we do not flexible
+to change or to add different properties of ships. But assuming that we
+have only one ship in the game its quite comfortable for us to implement
+    managing of the object in such way.
+
+class Torpedo contains getters, setters and method:
+    torp_is_die(self, life_time) - it gets the coming lifetime that other
+    classes wants for current torpedo, and method checks in accordance to
+    current live of the torpedo if it died or not.
+    This is useful because we dont need to worry about torpedo life from
+    outside, just by creating extra parameter of age of torpedo. Also it
+    may be useful for developing this game.
+
+Hey doc!

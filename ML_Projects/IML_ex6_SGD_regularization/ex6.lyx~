@@ -1,0 +1,1687 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass IEEEtran
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+מבוא למערכות לומדות
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+תרגיל 
+\numeric on
+5
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Convex\,analysis,\,SGD,\,and\,regularisation$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+דניאל לוין, מס' זהות: 
+\numeric on
+336462874
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula 
+\[
+Theoretical\,\,part
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $Warm\,up$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+1
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+להוכיח כי 
+\begin_inset Formula 
+\[
+g(u)=\sum_{i=1}^{m}\gamma_{i}f_{i}(u)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+הינה קמורה.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+הוכחה:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+יהא 
+\begin_inset Formula $C$
+\end_inset
+
+ - קבוצה קמורה, יהיו 
+\begin_inset Formula $u,v\in C$
+\end_inset
+
+ ו-
+\begin_inset Formula $\alpha\in[0,1]$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+g(\alpha u+(1-\alpha)v)=\sum_{i=1}^{m}\gamma_{i}f_{i}(\alpha u+(1-\alpha)v)\overset{f_{i}-convex}{\leq}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\leq\alpha\sum_{i=1}^{m}\gamma_{i}f_{i}(u)+(1-\alpha)\sum_{i=1}^{m}\gamma_{i}f_{i}(v)=\alpha g(u)+(1-\alpha)g(v)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+קיבלנו הגדרה של קמירות עבור פונקציה 
+\begin_inset Formula $g$
+\end_inset
+
+, מש
+\begin_inset Quotes erd
+\end_inset
+
+ל.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+2
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+דוגמה נגדית:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נגדיר 
+\begin_inset Formula $f(x)=e^{-x}$
+\end_inset
+
+, 
+\begin_inset Formula $g(x)=e^{x}$
+\end_inset
+
+, שתיהן פונקציות בעלות עם 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נגזרת שנייה חיובית על כל תחום ההגדרה, לכן שתיהן קמורות.
+\begin_inset Formula 
+\[
+h(x)=(f\circ g)(x)=e^{-e^{x}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נראה כי הנגזרת השנייה של 
+\begin_inset Formula $h(x)$
+\end_inset
+
+ שלילית עבור 
+\begin_inset Formula $x<0$
+\end_inset
+
+, ובכך
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נוכיח שהיא לא קמורה בתחום הזה.
+\begin_inset Formula 
+\[
+h''(x)=\left(e^{-e^{x}}\cdot\left(-e^{x}\right)\right)'=(-e^{x-e^{x}})'=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=-e^{x-e^{x}}\cdot(1-e^{x})\overset{\ast}{<}0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $*$
+\end_inset
+
+ - מתקיים עבור 
+\begin_inset Formula $x<0$
+\end_inset
+
+ כי אז 
+\begin_inset Formula $1-e^{x}>0$
+\end_inset
+
+, ו-
+\begin_inset Formula $e^{x-e^{x}}>0$
+\end_inset
+
+ לכל 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+הראינו כי הנגזרת השנייה של 
+\begin_inset Formula $h(x)$
+\end_inset
+
+ שלילית עבור 
+\begin_inset Formula $x<0$
+\end_inset
+
+, לכן לכל
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $x_{1},x_{2}\in(-\infty,0)$
+\end_inset
+
+ ולכל 
+\begin_inset Formula $\alpha\in[0,1]$
+\end_inset
+
+ הגדרת הקמירות אינה מתקיימת.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+בתור דוגמא נגדית ניתן לקחת כל שתי נקודות כאלה וכל 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+3
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+להוכיח כי 
+\begin_inset Formula $f$
+\end_inset
+
+ קמורה אם
+\begin_inset Quotes erd
+\end_inset
+
+ם 
+\begin_inset Formula $epi(f)=\{(u,t):f(u)\leq t\}$
+\end_inset
+
+ - קמורה.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+הוכחה:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נניח כי 
+\begin_inset Formula $f$
+\end_inset
+
+ קמורה, אזי:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+יהיו 
+\begin_inset Formula $w_{1},w_{2}\in epi(f)$
+\end_inset
+
+, נסמן: 
+\begin_inset Formula $w_{1}=(u_{1},t_{1})^{T},w_{2}=(u_{2},t_{2})^{T}$
+\end_inset
+
+, אזי
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+יהי 
+\begin_inset Formula $\alpha\in[0,1]$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\alpha w_{1}+(1-\alpha)w_{2}=\left(\begin{array}{c}
+\alpha u_{1}+(1-\alpha)u_{2}\\
+\alpha t_{1}+(1-\alpha)t_{2}
+\end{array}\right):=w\left(=\left(\begin{array}{c}
+w^{0}\\
+w^{1}
+\end{array}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נראה כי 
+\begin_inset Formula $w\in epi(f)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+f(\alpha u_{1}+(1-\alpha)u_{2})\overset{f-convex}{\leq}\alpha f(u_{1})+(1-\alpha)f(u_{2})\overset{w_{1},w_{2}\in epi(f)}{\leq}\alpha t_{1}+(1-\alpha)t_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+כלומר קיבלנו כי 
+\begin_inset Formula $f(w^{0})\leq w^{1}$
+\end_inset
+
+, לכן 
+\begin_inset Formula $w\in epi(f)$
+\end_inset
+
+, 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נניח כי 
+\begin_inset Formula $epi(f)$
+\end_inset
+
+ קמורה.
+ יהיו 
+\begin_inset Formula $u_{1},u_{2}\in C$
+\end_inset
+
+, ו-
+\begin_inset Formula $\alpha\in[0,1]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+אזי לכל 
+\begin_inset Formula $t_{1},t_{2}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $f(u_{1})\leq t_{1},f(u_{2})\leq t_{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+מקמירות 
+\begin_inset Formula $epi(f)$
+\end_inset
+
+ נובע:
+\begin_inset Formula 
+\[
+\alpha\cdot\left(\begin{array}{c}
+u_{1}\\
+t_{1}
+\end{array}\right)+(1-\alpha)\cdot\left(\begin{array}{c}
+u_{2}\\
+t_{2}
+\end{array}\right)=\left(\begin{array}{c}
+\alpha u_{1}+(1-\alpha)u_{2}\\
+\alpha t_{1}+(1-\alpha)t_{2}
+\end{array}\right)\in epi(f)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+ובפרט זה מתקיים עבור 
+\begin_inset Formula $f(u_{1})=t_{1},f(u_{2})=t_{2}$
+\end_inset
+
+, כלומר 
+\begin_inset Formula 
+\[
+f(\alpha u_{1}+(1-\alpha)u_{2})\overset{epi(f)-convex}{\leq}\alpha t_{1}+(1-\alpha)t_{2}=\alpha f(u_{1})+(1-\alpha)f(u_{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+קיבלנו את ההגדרה של קמירות ה-
+\begin_inset Formula $f$
+\end_inset
+
+, 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+4
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נראה את הטענה השקולה )כנובע משאלה 
+\numeric on
+3
+\numeric off
+( - נוכיח כי 
+\begin_inset Formula $epi(f)$
+\end_inset
+
+ - קמורה.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נרשום את ההגדרה: 
+\begin_inset Formula 
+\[
+epi(f)=\left\{ (u,t):sup_{i\in I}f_{i}(u)\leq t\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+יהיו 
+\begin_inset Formula $(u_{1},t_{1})^{T},(u_{2},t_{2})^{T}\in epi(f)$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha\in[0,1]$
+\end_inset
+
+ אזי:
+\begin_inset Formula 
+\[
+sup_{i\in I}f_{i}(u_{1})\leq t_{1}(\ast)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+sup_{i\in I}f_{i}(u_{2})\leq t_{2}(\ast)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+כעת, נתבונן בצירוף של הנקודות שבחרנו:
+\begin_inset Formula 
+\[
+\alpha\cdot\left(\begin{array}{c}
+sup_{i\in I}f_{i}(u_{1})\\
+t_{1}
+\end{array}\right)+(1-\alpha)\cdot\left(\begin{array}{c}
+sup_{i\in I}f_{i}(u_{2})\\
+t_{2}
+\end{array}\right)=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula 
+\[
+=\left(\begin{array}{c}
+\alpha\cdot sup_{i\in I}f_{i}(u_{1})+(1-\alpha)\cdot sup_{i\in I}f_{i}(u_{2})\\
+\alpha\cdot t_{1}+(1-\alpha)\cdot t_{2}
+\end{array}\right):=X\left(=\left(\begin{array}{c}
+X^{0}\\
+X^{1}
+\end{array}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+כלומר, נרצה להראות כי 
+\begin_inset Formula $X\in epi(f)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+sup_{i\in I}f_{i}\left(X^{0}\right)=sup_{i\in I}f_{i}\left(\alpha\cdot u_{1}+(1-\alpha)\cdot u_{2}\right)\overset{f_{i}-convex\forall i\in I}{\leq}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\leq\alpha\cdot sup_{i\in I}f_{i}\left(u_{1}\right)+(1-\alpha)\cdot sup_{i\in I}f_{i}\left(u_{2}\right)\overset{\ast}{\leq}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\leq\alpha\cdot t_{1}+(1-\alpha)\cdot t_{2}=X^{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+כלומר הנקודה 
+\begin_inset Formula $X\in epi(f)$
+\end_inset
+
+, כנדרש.
+ 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+5
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula 
+\[
+f(w,b)=l_{x,y}^{hinge}(w,b)=max\left(0,1-y\cdot\left(\left\langle w,x\right\rangle +b\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+יהיו 
+\begin_inset Formula $\left(w_{1},b_{1}\right)^{T},\left(w_{2},b_{2}\right)^{T}\in\mathbb{R}^{d+1}$
+\end_inset
+
+ יהי 
+\begin_inset Formula $\alpha\in[0,1]$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+f(\alpha w_{1}+(1-\alpha)w_{2},\alpha b_{1}+(1-\alpha)b_{2})=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=max\left\{ 0,1-y\cdot\left(\left\langle \alpha w_{1}+(1-\alpha)w_{2},x\right\rangle +\alpha b_{1}+(1-\alpha)b_{2}\right)\right\} =
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=max\left\{ 0,\alpha+1-\alpha-\alpha\cdot y\left(\left\langle w_{1},x\right\rangle +b_{1}\right))-(1-\alpha)y\left(\left\langle w_{2},x\right\rangle +b_{2}\right)\right\} =
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+=max\left\{ 0,\alpha\left(1-y\left(\left\langle w_{1},x\right\rangle +b_{1}\right)\right))+(1-\alpha)\left(1-y\left(\left\langle w_{2},x\right\rangle +b_{2}\right)\right)\right\} \leq
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\leq max\left\{ 0,\alpha\left(1-y\left(\left\langle w_{1},x\right\rangle +b_{1}\right)\right))\right\} +max\left\{ 0,(1-\alpha)\left(1-y\left(\left\langle w_{2},x\right\rangle +b_{2}\right)\right)\right\} =
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\alpha\cdot max\left\{ 0,\left(1-y\left(\left\langle w_{1},x\right\rangle +b_{1}\right)\right))\right\} +(1-\alpha)\cdot max\left\{ 0,\left(1-y\left(\left\langle w_{2},x\right\rangle +b_{2}\right)\right)\right\} =
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\alpha\cdot f(w_{1},b_{1})+(1-\alpha)\cdot f(w_{2},b_{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+6
+\numeric off
+:
+\begin_inset Formula 
+\[
+l_{x,y}^{hinge}(w,b)=max\left\{ 0,1-y\cdot\left(\left\langle w,x\right\rangle +b\right)\right\} =max\left\{ 0,1-y\cdot\left(\sum_{i=1}^{m}w_{i}x_{i}+b\right)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נמצא גרדיאנט של 
+\begin_inset Formula $hinge$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial l_{x,y}^{hinge}(w,b)}{\partial w_{i}}=\begin{cases}
+-yx_{i} & 1-y\left\langle w|x_{i}\right\rangle >0\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+ולפי הטענה שראינו בתרגול, מקסימום של תת-גרדיאנטים מוכל בגרדיאנט.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+7
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $f(x)=\sum_{i=1}^{m}f_{i}(x)$
+\end_inset
+
+, 
+\begin_inset Formula $\xi_{k}\in\partial f_{k}(x)$
+\end_inset
+
+ לכל 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+להוכיח כי 
+\begin_inset Formula 
+\[
+\sum_{k}\xi_{k}\in\partial\sum_{k}f_{k}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב כי 
+\begin_inset Formula $\xi_{k}\in\partial f_{k}(x)$
+\end_inset
+
+ לכן לכל 
+\begin_inset Formula $v\in V$
+\end_inset
+
+, מתקיים:
+\begin_inset Formula 
+\[
+f_{k}(v)\leq f_{k}(x)+\left\langle \xi_{k}|v-x\right\rangle 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ולכן:
+\begin_inset Formula 
+\[
+f(v)=\sum_{i=1}^{m}f_{i}(v)\leq\sum_{i=1}^{m}\left(f_{i}(x)+\left\langle \xi_{i}|v-x\right\rangle \right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left(\sum_{i=1}^{m}f_{i}(x)\right)+\left\langle \sum_{i=1}^{m}\xi_{i}|v-x\right\rangle =f(x)+\left\langle \sum_{i=1}^{m}\xi_{i}|v-x\right\rangle 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר 
+\begin_inset Formula $\blacksquare\sum_{i=1}^{m}\xi_{k}\in\partial\sum_{k=1}^{m}f_{k}(x)=\partial f(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+8
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula 
+\[
+f(w,b)=\frac{1}{m}\sum_{i=1}^{n}l_{x_{i},y_{i}}^{hinge}(w,b)+\frac{\lambda}{2}||w||^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+הוכחה: ניעזר במשפט 
+\numeric on
+2
+\numeric off
+ מהתרגול שטוען כי צירוף ליניארי של פונקציות 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+קמורות הינו פונקציה קמורה.
+ נגדיר: 
+\begin_inset Formula $\gamma_{1}=\frac{1}{m},\gamma_{2}=\frac{\lambda}{2}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נשים לב כי 
+\begin_inset Formula $h:||\cdot||^{p}\rightarrow\mathbb{R}$
+\end_inset
+
+ הינה קמורה לכל 
+\begin_inset Formula $p\geq1$
+\end_inset
+
+ )ראינו בהרצאה(.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+משאלה 
+\numeric on
+5
+\numeric off
+ נובע כי 
+\begin_inset Formula $l_{x_{i},y_{i}}^{hinge}(w,b)$
+\end_inset
+
+ - קמורה, וממשפט 
+\numeric on
+2
+\numeric off
+ נסיק כי 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+גם 
+\begin_inset Formula $S=\sum_{i=1}^{n}l_{x_{i},y_{i}}^{hinge}(w,b)$
+\end_inset
+
+ קמורה.
+ נקבל:
+\begin_inset Formula 
+\[
+f(w,b)=\gamma_{1}\cdot S+\gamma_{2}\cdot h
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+כלומר 
+\begin_inset Formula $f$
+\end_inset
+
+- צירוף ליניארי של פונקציות קמורות, ולכן היא בעצמה קמורה.
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+9
+\numeric off
+:ֵ
+\begin_inset Formula 
+\[
+L_{S}(w)=\prod_{i=1}^{m}l_{likelihood}(h_{w},(x_{i},y_{i}))=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\prod_{i=1}^{m}\left(\left(\frac{1}{1+exp(-w^{T}x)}\right)^{y_{i}}\cdot\left(1-\frac{1}{1+exp(-w^{T}x)}\right)^{1-y_{i}}\right)\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+10
+\numeric off
+:
+\begin_inset Formula 
+\[
+argmin\left(\tilde{L}_{S}(w)\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=argmin\left(\sum_{i=1}^{m}\left(y_{i}\left[-\log\left(\frac{1}{1+exp(-w^{T}x)}\right)\right]+(1-y_{i})\left[-\log\left(1-\frac{1}{1+exp(-w^{T}x)}\right)\right]\right)\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=argmax\left(\sum_{i=1}^{m}\left(y_{i}\left[\log\left(\frac{1}{1+exp(-w^{T}x)}\right)\right]+(1-y_{i})\left[\log\left(1-\frac{1}{1+exp(-w^{T}x)}\right)\right]\right)\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=argmax\left(\log\left(\prod_{i=1}^{m}\left(\left(\frac{1}{1+exp(-w^{T}x)}\right)^{y_{i}}\cdot\left(1-\frac{1}{1+exp(-w^{T}x)}\right)^{1-y_{i}}\right)\right)\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=argmax\left(L_{S}(w)\right)\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+13
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נשים לב כי הביטוי:
+\begin_inset Formula 
+\[
+\left(1-\frac{1}{1+exp(-w^{T}x)}\right)\left(\frac{1}{1+exp(-w^{T}x)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+תמיד חיובי מכיוון ש-
+\begin_inset Formula $exp(t)>0$
+\end_inset
+
+, ולכן 
+\begin_inset Formula $0<\frac{1}{1+exp(t)}<1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+לכן סימן של מטריצת הסיאן תלוי ב-
+\begin_inset Formula $x_{i}x_{i}^{T}$
+\end_inset
+
+, כלומר אם זו מטריצת 
+\begin_inset Formula $PSD$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+נסיק כי 
+\begin_inset Formula $\sum_{i=1}^{m}x_{i}x_{i}^{T}$
+\end_inset
+
+ הינה חיוביות, משמע 
+\begin_inset Formula $H_{\tilde{L}_{S}(w)}\succeq0$
+\end_inset
+
+, ולכן ממשפט
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+שראינו בתרגול על שקילות חיוביות מטריצת הסיאן וקמירות.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+עלינו להראות כי 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+\begin_inset Formula 
+\[
+wx_{l}x_{l}^{T}w^{T}\geq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+הוכחה:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula 
+\[
+wx_{l}x_{l}^{T}w^{T}=\left(x_{l}^{T}w^{T}\right)^{T}x_{l}^{T}w^{T}=\left\langle x_{l}^{T}w^{T}\mid x_{l}^{T}w^{T}\right\rangle =\left|\left|x_{l}^{T}w^{T}\right|\right|^{2}\geq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+ולכן לכל 
+\begin_inset Formula $w\in\mathbb{R}^{d}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula 
+\[
+wH_{\tilde{L}_{S}(w)}w^{T}\geq0\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula 
+\[
+Regularization
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+14
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+להראות כי 
+\begin_inset Formula 
+\[
+\hat{w}(\lambda)=A_{\lambda}\hat{\boldsymbol{w}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula $A_{\lambda}=\left(XX^{T}+\lambda I_{d}\right)^{-1}\left(XX^{T}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הוכחה: נמצא קודם את 
+\begin_inset Formula $\hat{w}(\lambda)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+נשים לב כי הפונקציה 
+\begin_inset Formula $f^{\lambda}(w)=||y-X^{T}w||_{2}^{2}+\lambda||w||_{2}^{2}$
+\end_inset
+
+ הינה קמורה,
+\end_layout
+
+\begin_layout Standard
+לכן יש לה נקודת מינימום יחידה.
+ נגזור את הפונקציה ונמצא אותה,
+\end_layout
+
+\begin_layout Standard
+או במילים אחרות את 
+\begin_inset Formula $\hat{w}(\lambda)=argmin_{w}(f^{\lambda}(w))$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\nabla f^{\lambda}(w)=-2X\cdot(y-X^{T}w)+2\lambda w
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ונסיק כי 
+\begin_inset Formula $\nabla f^{\lambda}(w)=0$
+\end_inset
+
+ 
+\begin_inset Formula $\leftrightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $XX^{T}w+\lambda w=Xy$
+\end_inset
+
+
+\begin_inset Formula $\leftrightarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $w=\left(XX^{T}+\lambda I_{d}\right)^{-1}Xy$
+\end_inset
+
+, הסתמכנו כאן על ההנחה כי 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $XX^{T}$
+\end_inset
+
+הפיכה.
+ אזי 
+\begin_inset Formula $\hat{w}(\lambda)=\left(XX^{T}+\lambda I_{d}\right)^{-1}Xy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כעת נשים לב כי מתקיים:
+\begin_inset Formula 
+\[
+A_{\lambda}\hat{w}=\left(XX^{T}+\lambda I_{d}\right)^{-1}\left(XX^{T}\right)\hat{w}(\lambda=0)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left(XX^{T}+\lambda I_{d}\right)^{-1}\left(XX^{T}\right)\left(XX^{T}\right)^{-1}Xy=\left(XX^{T}+\lambda I_{d}\right)^{-1}Xy=\hat{w}(\lambda)\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+15
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+להראות כי 
+\begin_inset Formula 
+\begin{align*}
+\lambda & >0\rightarrow\mathbb{E}\left[\hat{w}(\lambda)\right]\neq w
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נבצע פיתוח לפי ההגדרה:
+\begin_inset Formula 
+\[
+\mathbb{E}\left[\left(XX^{T}+\lambda I_{d}\right)^{-1}Xy\right]=\mathbb{E}\left[\left(XX^{T}+\lambda I_{d}\right)^{-1}X\left(X^{T}w+\epsilon\right)\right]=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\mathbb{E}\left[\left(XX^{T}+\lambda I_{d}\right)^{-1}XX^{T}w+\left(XX^{T}+\lambda I_{d}\right)^{-1}X\epsilon\right]=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left(XX^{T}+\lambda I_{d}\right)^{-1}XX^{T}w+\mathbb{E}\left[\left(XX^{T}+\lambda I_{d}\right)^{-1}X\epsilon\right]=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left(XX^{T}+\lambda I_{d}\right)^{-1}XX^{T}w+\left(XX^{T}+\lambda I_{d}\right)^{-1}X\cdot\mathbb{E}\left[\epsilon\right]\overset{\epsilon\overset{iid}{\sim}N(0,\sigma^{2})}{=}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left(XX^{T}+\lambda I_{d}\right)^{-1}XX^{T}w
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ולבסוף נשים לב כי אם 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+ אזי 
+\begin_inset Formula 
+\[
+\mathbb{E}\left[\hat{w}(\lambda)\right]=\left(XX^{T}+\lambda I_{d}\right)^{-1}XX^{T}w\neq\left(XX^{T}\right)^{-1}XX^{T}w=w\blacklozenge
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+16
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+נראה כי 
+\begin_inset Formula 
+\[
+Var(\hat{w}(\lambda))=\sigma^{2}A_{\lambda}(XX^{T})^{-1}A_{\lambda}^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הוכחה:
+\end_layout
+
+\begin_layout Standard
+ניעזר ברמזים:
+\begin_inset Formula 
+\[
+Var(\hat{w}(\lambda))=Var(A_{\lambda}\hat{w})=A_{\lambda}Var(\hat{w})A_{\lambda}^{T}=A_{\lambda}\sigma^{2}\left(XX^{T}\right)^{-1}A_{\lambda}^{T}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\sigma^{2}A_{\lambda}\left(XX^{T}\right)^{-1}A_{\lambda}^{T}\blacklozenge
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+
+\bar under
+שאלה 
+\numeric on
+18
+\numeric off
+:
+\begin_inset Formula 
+\[
+Practical\,questions
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+20
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A$
+\end_inset
+
+( בחרתי 
+\begin_inset Formula $\eta=0.05$
+\end_inset
+
+ כי הערך הזה נתן תוצאות הכי הגיוניות בחינת ה-
+\begin_inset Formula 
+\[
+bias-variance\,trade-off
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מהגדרת ה-
+\begin_inset Formula $MSE(\lambda)$
+\end_inset
+
+, ומכך שהראינו* בשאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+17
+\end_layout
+
+\begin_layout Standard
+כי השיפוע של 
+\begin_inset Formula $MSE(\lambda)$
+\end_inset
+
+ הינו שלילי, נסיק כי 
+\end_layout
+
+\begin_layout Standard
+בהינתן 
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+ קטן ביחס ל-
+\begin_inset Formula $\lambda$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula 
+\[
+MSE(\epsilon)<MSE(0)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+או במילים אחרות השגיאה קטנה.
+\begin_inset Formula $\blacklozenge$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+19
+\numeric off
+:
+\bar default
+ ראה קוד
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+20
+\numeric off
+:
+\bar default
+ ראה קוד
+\end_layout
+
+\end_body
+\end_document

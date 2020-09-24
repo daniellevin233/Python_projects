@@ -1,0 +1,240 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Screen.jack
+
+/**
+ * A library of functions for displaying graphics on the screen.
+ * The Hack physical screen consists of 512 rows (indexed 0..511, top to bottom)
+ * of 256 pixels each (indexed 0..255, left to right). The top left pixel on 
+ * the screen is indexed (0,0).
+ */
+class Screen {
+
+	static int rowLength;
+	static int columnLength;
+	static Array powerOfTwoToBit; // powerOfTwoToBit[3] = 0..01000
+	static boolean color;
+	
+    /** Initializes the Screen. */
+    function void init() {
+		var int i, curBit;
+		let rowLength = 511;
+		let columnLength = 255;
+		let color = true;
+		let powerOfTwoToBit = Array.new(16);
+		let curBit = 1;
+		while (i < 16){
+			let powerOfTwoToBit[i] = curBit;
+			let curBit = curBit + curBit;
+			let i = i + 1;
+		}
+		return;
+    }
+
+    /** Erases the entire screen. */
+    function void clearScreen() {
+		do Screen.setColor(false);
+		do Screen.drawRectangle(0, 0, rowLength, columnLength);
+		do Screen.setColor(true);
+		return;
+    }
+
+    /** Sets the current color, to be used for all subsequent drawXXX commands.
+     *  Black is represented by true, white by false. */
+    function void setColor(boolean b) {
+		let color = b;
+		return;
+    }
+	
+	function int powerOfTwoMultiply(int num, int power){
+		var int i;
+		while (i < power){
+			let num = num + num;
+			let i = i + 1;
+		}
+		return num;
+	}
+
+    /** Draws the (x,y) pixel, using the current color. */
+    function void drawPixel(int x, int y) {
+		var int address, value, placeToColor; // example: numOfBitToColor = 3 => placeToColor = 0..01000
+		let address = 16384 + Screen.powerOfTwoMultiply(y, 5) + Math.divide(x, 16);
+		let value = Memory.peek(address);
+		let placeToColor = powerOfTwoToBit[x & 15]; // equal to powerOfTwoToBit[x % 16]: x=3 => 0..01000
+		if (~color) { // color in white
+			let value = value & (~placeToColor); // value & 1..101..1
+		}
+		else { // color in black
+			let value = value | placeToColor; // value | 0..010..0
+		}
+		do Memory.poke(address, value);
+		return;
+    }
+	
+	function void drawVerticalLine(int x, int smallY, int bigY) {
+		var int curAddress, value, placeToColor, curY;
+		let curAddress = 16384 + Screen.powerOfTwoMultiply(smallY, 5) + Math.divide(x, 16);
+		let placeToColor = powerOfTwoToBit[x & 15]; // equal to powerOfTwoToBit[x % 16]: x=3 => 0..01000
+		let curY = smallY;
+		while (curY < (bigY + 1)){
+			let value = Memory.peek(curAddress);
+			if (~color) { // color in white
+				let value = value & (~placeToColor); // value & 1..101..1
+			}
+			else { // color in black
+				let value = value | placeToColor; // value | 0..010..0
+			}
+			do Memory.poke(curAddress, value);
+			let curAddress = curAddress + 32;
+			let curY = curY + 1;
+		}
+		return;
+	}
+	
+	function void drawHorizontalLine(int y, int smallX, int bigX) {
+		var int currAddress, value, prefixBitmap, postfixBitmap, remainingPixels, leftRegister, rightRegister;
+		let leftRegister = Math.divide(smallX, 16);
+		let rightRegister = Math.divide(bigX, 16);
+		let currAddress = 16384 + Screen.powerOfTwoMultiply(y, 5) + leftRegister;
+		if(rightRegister = leftRegister){
+			if((bigX - smallX) = 15){ // case when entire register being colored
+				do Memory.poke(currAddress, color);
+			}
+			else{ // case when subsequence of bits of one register being colored
+				let value = Memory.peek(currAddress); 
+				let prefixBitmap = powerOfTwoToBit[(bigX + 1) & 15] - powerOfTwoToBit[smallX & 15];
+				if(color){
+					do Memory.poke(currAddress, value | prefixBitmap);
+				}
+				else{
+					do Memory.poke(currAddress, value & (~prefixBitmap));
+				}				
+			}
+			return;
+		}
+		let prefixBitmap = powerOfTwoToBit[smallX & 15];
+		if(~(prefixBitmap = 1)){ // if smallX % 16 != 0
+			let value = Memory.peek(currAddress);
+			if(color){
+				do Memory.poke(currAddress, value | ~(prefixBitmap - 1));
+			}
+			else{
+				do Memory.poke(currAddress, value & (prefixBitmap - 1));
+			}
+			let currAddress = currAddress + 1;
+			let smallX = smallX + 16 - (smallX & 15);
+		}
+		let remainingPixels = bigX - smallX + 1;
+		while(remainingPixels > 15){
+			do Memory.poke(currAddress, color);
+			let currAddress = currAddress + 1;
+			let remainingPixels = remainingPixels - 16;
+		}
+		let postfixBitmap = powerOfTwoToBit[remainingPixels & 15];
+		if (~(postfixBitmap = 1)){
+			let value = Memory.peek(currAddress);
+			if(color){
+				do Memory.poke(currAddress, value | (postfixBitmap - 1));
+			}
+			else{
+				do Memory.poke(currAddress, value & (~(postfixBitmap - 1)));
+			}
+		}
+		return;
+	}
+	
+	/** Draws a line assuming that (x, y) is upper and lefter than (x + dx, y + dy). */
+	function void drawDownLine(int x, int y, int dx, int dy) {
+		var int a, b, diff;
+		let a = 0;
+		let b = 0;
+		let diff = 0;
+		while ((a < dx) & (b < dy)){
+			do Screen.drawPixel(x + a, y - b);
+			if (diff < 0){
+				let a = a + 1;
+				let diff = diff + dy;
+			}
+			else{
+				let b = b + 1;
+				let diff = diff - dx;
+			}
+		}
+		return;		
+	}
+	
+	/** Draws a line assuming that (x, y) is lower and lefter than (x + dx, y + dy). */
+	function void drawUpLine(int x, int y, int dx, int dy) {
+		var int a, b, diff;
+		let a = 0;
+		let b = 0;
+		let diff = 0;
+		while ((a < dx) & (b < dy)){
+			do Screen.drawPixel(x + a, y + b);
+			if (diff < 0){
+				let a = a + 1;
+				let diff = diff + dy;
+			}
+			else{
+				let b = b + 1;
+				let diff = diff - dx;
+			}
+		}
+		return;
+	}
+	
+    /** Draws a line from pixel (x1,y1) to pixel (x2,y2), using the current color. */
+    function void drawLine(int x1, int y1, int x2, int y2) {
+		var int bigX, smallX, bigY, smallY;
+		// preproccessing
+		let bigX = Math.max(x1, x2);
+		let smallX = Math.min(x1, x2);
+		let bigY = Math.max(y1, y2);
+		let smallY = Math.min(y1, y2);
+		// drawing
+		if (bigX = smallX) { // vertical line
+			do Screen.drawVerticalLine(bigX, smallY, bigY);
+		}
+		else {
+			if (bigY = smallY) { // horizontal line
+				do Screen.drawHorizontalLine(bigY, smallX, bigX);
+			}
+			else { // inclined line
+				if (((x2 > x1) & (y2 > y1)) | ((x2 < x1) & (y2 < y1))){
+					do Screen.drawUpLine(smallX, smallY, bigX - smallX, bigY - smallY);
+				}
+				else {
+					do Screen.drawDownLine(smallX, bigY, bigX - smallX, bigY - smallY);
+				}
+			}
+		}
+		return;
+    }
+
+    /** Draws a filled rectangle whose top left corner is (x1, y1)
+     * and bottom right corner is (x2,y2), using the current color. */
+    function void drawRectangle(int x1, int y1, int x2, int y2) {
+		var int curLine;
+		let curLine = y1;
+		while (curLine < (y2 + 1)) {
+			do Screen.drawHorizontalLine(curLine, x1, x2);
+			let curLine = curLine + 1;
+		}
+		return;
+    }
+
+    /** Draws a filled circle of radius r<=181 around (x,y), using the current color. */
+    function void drawCircle(int x, int y, int r) {
+		var int dy, curY, sqrtRes, rSquare;
+		let dy = -r;
+		let rSquare = Math.multiply(r, r);
+		while (dy < (r + 1)) {
+			let curY = y + dy;
+			let sqrtRes = Math.sqrt(rSquare - Math.multiply(dy, dy));
+			do Screen.drawHorizontalLine(curY, x - sqrtRes, x + sqrtRes);
+			let dy = dy + 1;
+		}
+		return;
+    }
+}

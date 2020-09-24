@@ -1,0 +1,10 @@
+class Main{
+    function int call(int x){
+        var int y;
+        let y = x;
+        while (x < (y*y)){
+            let y = Math.sqrt(x);
+        }
+        return y;
+    }
+}
