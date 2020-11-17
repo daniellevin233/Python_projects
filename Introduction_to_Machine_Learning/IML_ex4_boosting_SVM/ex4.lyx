@@ -1,0 +1,1329 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass IEEEtran
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+מבוא למערכות לומדות
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+תרגיל
+\family roman
+\shape up
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Boosting\,\,and\,\,SVM$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+דניאל לוין, מס' זהות: 
+\numeric on
+000000000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $SVM\,and\,generalization$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\numeric off
+: ראה קוד
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m=5
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Hyperplanes_m=5.jpeg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+m=10
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Hyperplanes_m=10.jpeg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+m=15
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Hyperplanes_m=15.jpeg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+m=25
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Hyperplanes_m=25.jpeg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+m=70
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Hyperplanes_m=70.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename mean_accuracies.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+לפי הגרף האחרון, אנחנו רואים כי לומד ה-
+\begin_inset Formula $SVM$
+\end_inset
+
+ נתן תוצאות טובות יותר.
+\end_layout
+
+\begin_layout Standard
+התוצאה נובעת מאופן פעולתו של האלגוריתם 
+\begin_inset Formula $SVM$
+\end_inset
+
+ למציאת 
+\begin_inset Formula $w,b$
+\end_inset
+
+, הרי 
+\end_layout
+
+\begin_layout Standard
+מודל 
+\begin_inset Formula $SVM$
+\end_inset
+
+ מנסה לבנות 
+\begin_inset Formula $hyperplane$
+\end_inset
+
+ כמה שיותר רחוק משתי נקודות 
+\end_layout
+
+\begin_layout Standard
+הכי קרובות בעלות תיוגים שונים.
+ לעומת זאת 
+\begin_inset Formula $perceptron$
+\end_inset
+
+ מיישם 
+\end_layout
+
+\begin_layout Standard
+שיטת העונש שמתחשבת בערכים של התכונות של 
+\begin_inset Formula $X$
+\end_inset
+
+, שזה לדעתי
+\end_layout
+
+\begin_layout Standard
+לא הכי אינדיקטיבי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Separate\,and\,Inseparable\,-\,Adaboost$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\numeric off
+: ראה קוד
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename training_test_errors.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename subplots_points.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+קיבלתי 
+\begin_inset Formula $T=200$
+\end_inset
+
+, וזה מסתדר טוב עם 
+\begin_inset Formula $bias-variance\,trade-off$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+השגיאה גם כן מאוד נמוכה, שזה רומז על כך שנמצא איזון טוב, כלומר 
+\begin_inset Formula $T$
+\end_inset
+
+ מתאים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename min_error_points.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+בונוס:
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+11
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+לא מנורמל:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Not_normalized.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מנורמל:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Normalized.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הסבר: לקראת סוף הלמידה, משקלים של הדגמיות שואפים לאפס הרי 
+\end_layout
+
+\begin_layout Standard
+לקראת סוף הלמידה, ה-
+\begin_inset Formula $classifier$
+\end_inset
+
+ נותן ניבויים מדויקים יותר, ולכן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+העונש
+\begin_inset Quotes erd
+\end_inset
+
+ של הדגימות קטן.
+ מזה נובע גודל קטן של נקודות עם משקלים
+\end_layout
+
+\begin_layout Standard
+לא מנורמלים, אחרי הנרמול יחס בין גודלי המשקלים נשמר, אך הוא 
+\end_layout
+
+\begin_layout Standard
+עלה, ובזכות זה אנו יכולים לראות את הנקודות עם משקלים מתאימים 
+\end_layout
+
+\begin_layout Standard
+על הציור השני.
+ בנוסף הדגימות שהמשקל שלהן הכי גדול )גבול המעגל 
+\end_layout
+
+\begin_layout Standard
+הכחול בתמונה( הן בגבול בין שינוי הניבויים, וזה הגיוני שלאחר סוף 
+\end_layout
+
+\begin_layout Standard
+ריצת האלגוריתם, הדגימות האלה נשארו כבעלות עונש מירבי, 
+\end_layout
+
+\begin_layout Standard
+הרי אלה דגימות הכי בעייתיות במדגם.
+\end_layout
+
+\begin_layout Standard
+הסבר: מכיוון שבסוף הלמידה המשקלים היו נמוכים מדי, 
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+12
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+noise-ratio=0.01
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Bonus_0.01_8.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Bonus_0.01_9.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Bonus_0.4_10.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+11
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Bonus_0.01_11.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+noise-ratio=0.4
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Bonus_0.4_8.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Bonus_0.4_9.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Bonus_0.01_10.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+11
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Bonus_0.4_11.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+תיאור שינויים:
+\end_layout
+
+\begin_layout Standard
+מכיוון שנוסף רעש, בדוגמאות הללו יש דגימות שלא נתינים להכללה
+\end_layout
+
+\begin_layout Standard
+ע
+\begin_inset Quotes erd
+\end_inset
+
+י פונקציה קמורה.
+ אנחנו רואים גם כי ככל שהרעש גדול יותר, 
+\end_layout
+
+\begin_layout Standard
+התוצאות מפוזרות יותר, וכתוצאה שגיאה גדולה יותר.
+\end_layout
+
+\begin_layout Standard
+כאשר הרעש היה 
+\begin_inset Formula $0.4$
+\end_inset
+
+ שזה משמעותית יותר מ-
+\begin_inset Formula $0.01$
+\end_inset
+
+, אנו רואים 
+\end_layout
+
+\begin_layout Standard
+הרבה דגימות בעלות משקל גבוה שלא תויגו נכון.
+ במקרה שבו
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T$
+\end_inset
+
+ יחסית גדול זה יכול לנבוע מ-
+\begin_inset Formula $overfitting$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+הסבר לגרפים של שאלות 
+\numeric on
+8
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ו-
+\numeric on
+10
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+לפי פונקציות השגיאות, אנו רואים כי בהינתן רעש יותר גדול, 
+\end_layout
+
+\begin_layout Standard
+השגיאה גם כן גבוהה יותר, ולכן החל מ-
+\begin_inset Formula $T\sim150$
+\end_inset
+
+ אנחנו כבר
+\end_layout
+
+\begin_layout Standard
+מקבלים 
+\begin_inset Formula $overfitting$
+\end_inset
+
+, לכן בניגוד למקרה עם 
+\begin_inset Formula $noise\sim0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+נבחר מספר קטן יותר של 
+\begin_inset Formula $classifiers$
+\end_inset
+
+.
+ זה הדגמה טובה
+\end_layout
+
+\begin_layout Standard
+ל-
+\begin_inset Formula $bias-variance\,trade-off$
+\end_inset
+
+.
+ כלומר ככל שהרעש 
+\end_layout
+
+\begin_layout Standard
+גבוה יותר, יש סיכוי טוב לעשות 
+\begin_inset Formula $overfitting$
+\end_inset
+
+, ולכן במקום 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T=200$
+\end_inset
+
+ קיבלנו 
+\begin_inset Formula $T=50$
+\end_inset
+
+ בשאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\numeric off
+.
+ )בזכות עקרון ה-
+\begin_inset Formula $ERM$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+וכמובן שהשגיאה עלתה בהרבה עבור רעש גבוה יותר.
+\end_layout
+
+\end_body
+\end_document

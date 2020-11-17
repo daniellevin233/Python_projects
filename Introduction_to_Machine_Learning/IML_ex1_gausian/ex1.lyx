@@ -1,0 +1,1515 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass IEEEtran
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+מבוא למערכות לומדות
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+תרגיל 
+\numeric on
+1
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+אלגברה לינארית, אינפי, הסתברות
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size large
+דניאל לוין, מס' זהות: 
+\numeric on
+000000000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{Algebra\,\,Recap}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+3
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v=(1,2,3,4);w=(0,-1,1,2)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נסמן ב-
+\begin_inset Formula $x\in\mathbb{R}^{4}$
+\end_inset
+
+ את ההטלה של 
+\begin_inset Formula $v$
+\end_inset
+
+ על 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+ניזכר בנוסחה: 
+\begin_inset Formula $x=\frac{<v,w>}{||w||_{2}}\cdot\overrightarrow{w}$
+\end_inset
+
+ ונקבל:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=\frac{(1,2,3,4)\cdot(0,-1,1,2)^{T}}{\sqrt{0^{2}+(-1)^{2}+1^{2}+2^{2}}}\cdot(0,-1,1,2)^{T}=\frac{-2+3+8}{\sqrt{6}}\cdot(0,-1,1,2)^{T}=3\sqrt{\frac{3}{2}}\cdot\text{\left(\begin{array}{c}
+ 0\\
+ -1\\
+ 1\\
+ 2 
+\end{array}\right).}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+4
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v=(1,2,3,4);w=(1,0,1,-1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשתמש באותה נוסחה ונקבל:
+\begin_inset Formula 
+\[
+x=\frac{(1,2,3,4)\cdot(1,0,1,-1)^{T}}{\sqrt{1^{2}+0{}^{2}+1^{2}+(-1)^{2}}}\cdot(1,0,1,-1)^{T}=\frac{1+3-4}{\sqrt{3}}\cdot(0,-1,1,2)^{T}=0\cdot\text{\left(\begin{array}{c}
+ 0\\
+ -1\\
+ 1\\
+ 2 
+\end{array}\right)=\ensuremath{\overrightarrow{0}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בעצם קיבלנו כי וקטורים 
+\begin_inset Formula $v$
+\end_inset
+
+ ו-
+\begin_inset Formula $w$
+\end_inset
+
+ אורתוגונליים אחד לשני, הרי המכפלה הפנימית שלהם הינה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{SVD}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+7
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+יהיו מטריצות 
+\begin_inset Formula $U\in M_{m\times r},V\in M_{n\times r}$
+\end_inset
+
+ - אורתוגונליות ומטריצה 
+\begin_inset Formula $D$
+\end_inset
+
+ - אלכסונית, 
+\end_layout
+
+\begin_layout Standard
+כך שהן מייצגות את 
+\begin_inset Formula $SVD$
+\end_inset
+
+ של 
+\begin_inset Formula $A\in M_{m\times n}$
+\end_inset
+
+: 
+\begin_inset Formula $A=UDV^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נסמן ב-
+\begin_inset Formula $d_{1}\geq d_{2}\geq...\geq d_{r}\geq0$
+\end_inset
+
+ את הערכים הינסגולריים של 
+\begin_inset Formula $A$
+\end_inset
+
+, כלומר כניסות של 
+\begin_inset Formula $D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נסמן ב-
+\begin_inset Formula $D^{\$}\in M_{r\times r}$
+\end_inset
+
+ את המטריצה מהצורה:
+\begin_inset Formula 
+\[
+D^{\$}=\left(\begin{array}{cccccc}
+\frac{1}{d_{1}} & 0 & 0 & 0 & 0 & 0\\
+0 & \frac{1}{d_{2}} & 0 & 0 & 0 & 0\\
+0 & 0 & \cdot & 0 & 0 & 0\\
+0 & 0 & 0 & \cdot & 0 & 0\\
+0 & 0 & 0 & 0 & \cdot & 0\\
+0 & 0 & 0 & 0 & 0 & \frac{1}{d_{r}}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב כי מטריצות 
+\begin_inset Formula $U,V$
+\end_inset
+
+ - אורתוגונליות ולכן 
+\begin_inset Formula $UU^{T}=\left(\frac{I_{r}}{0_{(m-r)\times r}}\right);VV^{T}=\left(\frac{I_{r}}{0_{(n-r)\times r}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אזי נגדיר:
+\begin_inset Formula 
+\[
+A^{-1}=\left(UDV^{T}\right)^{-1}=VD^{\$}U^{T}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+זוהי הגדרה נכונה מכיוון ש:
+\begin_inset Formula 
+\[
+\left(UDV^{T}\right){}^{-1}\cdot UDV^{T}=VD^{\$}U^{T}UDV^{T}=VD_{r\times r}^{\$}\left(\frac{I_{r}}{0_{(m-r)\times r}}\right)^{T}D_{r\times r}V^{T}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=VD^{\$}DV^{T}=V\left(\begin{array}{cccccc}
+\frac{1}{d_{1}} & 0 & 0 & 0 & 0 & 0\\
+0 & \frac{1}{d_{2}} & 0 & 0 & 0 & 0\\
+0 & 0 & \cdot & 0 & 0 & 0\\
+0 & 0 & 0 & \cdot & 0 & 0\\
+0 & 0 & 0 & 0 & \cdot & 0\\
+0 & 0 & 0 & 0 & 0 & \frac{1}{d_{r}}
+\end{array}\right)\left(\begin{array}{cccccc}
+d_{1} & 0 & 0 & 0 & 0 & 0\\
+0 & d_{2} & 0 & 0 & 0 & 0\\
+0 & 0 & \cdot & 0 & 0 & 0\\
+0 & 0 & 0 & \cdot & 0 & 0\\
+0 & 0 & 0 & 0 & \cdot & 0\\
+0 & 0 & 0 & 0 & 0 & d_{r}
+\end{array}\right)V^{T}=VI_{r}V^{T}=VV^{T}=I_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כנדרש.
+\end_layout
+
+\begin_layout Standard
+הייצוג ההפוך מאוד שימושי בלמידה, משמע אם אנחנו רוצים ללמוד
+\end_layout
+
+\begin_layout Standard
+את 
+\begin_inset Formula $w=\left(XX^{T}\right)^{-1}Xy$
+\end_inset
+
+ על מנת לתאר מחלקת היפותזות ליניאריות,
+\end_layout
+
+\begin_layout Standard
+בהנתן העובדה ש-
+\begin_inset Formula $XX^{T}$
+\end_inset
+
+ הינה מטריצה הפיכה, אנחנו מסיקים כי למערכת 
+\end_layout
+
+\begin_layout Standard
+משוואות ליניאריות 
+\begin_inset Formula $\hat{w}=\left(XX^{T}\right)^{-1}Xy=UD^{\$}V^{T}y$
+\end_inset
+
+ ישנו פתרון יחיד, 
+\end_layout
+
+\begin_layout Standard
+שאנחנו מיד מקבלים אותו.
+ במקרה הזה זמן הריצה של למידת 
+\begin_inset Formula $w$
+\end_inset
+
+ הינו פולינומי 
+\end_layout
+
+\begin_layout Standard
+במימדי המטריצות מכיוון שחישוב של 
+\begin_inset Formula $D^{\$}$
+\end_inset
+
+הינו 
+\begin_inset Formula $O(r)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+ומכפלות של מטריצות גם ניתנות לחישוב יעיל.
+ השיטה הזאת מונעת מאיתנו 
+\end_layout
+
+\begin_layout Standard
+להשתמש בדירוג גאוס שהרבה יותר יקר מבחינת הסיבוכיות שלו.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+8
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C=UDV^{T}=\begin{pmatrix}5 & 5\\
+-1 & 7
+\end{pmatrix}$
+\end_inset
+
+.
+ נמצא עבור המטריצה הזאת פירוק 
+\begin_inset Formula $SVD$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ראשית, נחשב את:
+\begin_inset Formula 
+\[
+C^{T}C=\begin{pmatrix}5 & -1\\
+5 & 7
+\end{pmatrix}\begin{pmatrix}5 & 5\\
+-1 & 7
+\end{pmatrix}=\begin{pmatrix}26 & 18\\
+18 & 74
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כעת נמצא 
+\begin_inset Formula $EVD$
+\end_inset
+
+ עבור 
+\begin_inset Formula $C^{T}C$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+det(C^{T}C-\lambda I)=det\begin{pmatrix}26-\lambda & 18\\
+18 & 74-\lambda
+\end{pmatrix}=\lambda^{2}-100\lambda+1600=(\lambda-20)(\lambda-80)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda_{1}=80;\lambda_{2}=20
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כעת נמצא מטריצה אורתוגונלית 
+\begin_inset Formula $K$
+\end_inset
+
+, כך ש-
+\begin_inset Formula $KP^{T}PK^{T}$
+\end_inset
+
+ הינו 
+\begin_inset Formula $EVD$
+\end_inset
+
+ עבור 
+\begin_inset Formula $C^{T}C$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula $P=\begin{pmatrix}4\sqrt{5} & 0\\
+0 & 2\sqrt{5}
+\end{pmatrix}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+1
+\numeric off
+( 
+\begin_inset Formula $\lambda_{1}=80$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+C^{T}C-80I=0\Longleftrightarrow\begin{pmatrix}-54 & 18\\
+18 & -6
+\end{pmatrix}\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)=0\Longleftrightarrow\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)=\left(\begin{array}{c}
+\frac{1}{\sqrt{10}}\\
+\frac{3}{\sqrt{10}}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נירמלנו על מנת לקבל וקטור נורמלי.
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+2
+\numeric off
+( 
+\begin_inset Formula $\lambda_{2}=20$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+C^{T}C-20I=0\Longleftrightarrow\begin{pmatrix}6 & 18\\
+18 & 54
+\end{pmatrix}\left(\begin{array}{c}
+y_{1}\\
+y_{2}
+\end{array}\right)=0\Longleftrightarrow\left(\begin{array}{c}
+y_{1}\\
+y_{2}
+\end{array}\right)=\left(\begin{array}{c}
+\frac{3}{\sqrt{10}}\\
+-\frac{1}{\sqrt{10}}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לכן 
+\begin_inset Formula $K=\begin{pmatrix}x_{1} & y_{1}\\
+x_{2} & y_{2}
+\end{pmatrix}=\frac{1}{\sqrt{10}}\begin{pmatrix}1 & 3\\
+3 & -1
+\end{pmatrix}$
+\end_inset
+
+ זהו הלכסון האורתוגונלי של 
+\begin_inset Formula $C^{T}C$
+\end_inset
+
+, ו-
+\begin_inset Formula 
+\[
+C^{T}C=\frac{1}{\sqrt{10}}\begin{pmatrix}1 & 3\\
+3 & -1
+\end{pmatrix}\begin{pmatrix}4\sqrt{5} & 0\\
+0 & 2\sqrt{5}
+\end{pmatrix}^{T}\begin{pmatrix}4\sqrt{5} & 0\\
+0 & 2\sqrt{5}
+\end{pmatrix}\frac{1}{\sqrt{10}}\begin{pmatrix}1 & 3\\
+3 & -1
+\end{pmatrix}^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בינתיים: 
+\begin_inset Formula $V=\frac{1}{\sqrt{10}}\begin{pmatrix}1 & 3\\
+3 & -1
+\end{pmatrix}$
+\end_inset
+
+, 
+\begin_inset Formula $D=\begin{pmatrix}4\sqrt{5} & 0\\
+0 & 2\sqrt{5}
+\end{pmatrix}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ניעזר בשיוויון: 
+\begin_inset Formula $CV=UD$
+\end_inset
+
+ על מנת למצוא את 
+\begin_inset Formula $U$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+CV=\begin{pmatrix}5 & 5\\
+-1 & 7
+\end{pmatrix}\frac{1}{\sqrt{10}}\begin{pmatrix}1 & 3\\
+3 & -1
+\end{pmatrix}=\frac{1}{\sqrt{10}}\begin{pmatrix}20 & 10\\
+20 & -10
+\end{pmatrix}=U\begin{pmatrix}4\sqrt{5} & 0\\
+0 & 2\sqrt{5}
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+U=\frac{1}{\sqrt{10}}\begin{pmatrix}20 & 10\\
+20 & -10
+\end{pmatrix}\begin{pmatrix}\frac{1}{4\sqrt{5}} & 0\\
+0 & \frac{1}{2\sqrt{5}}
+\end{pmatrix}=\frac{1}{\sqrt{10}}\begin{pmatrix}\sqrt{5} & \sqrt{5}\\
+\sqrt{5} & -\sqrt{5}
+\end{pmatrix}=\begin{pmatrix}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+\end{pmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לסיכום:
+\begin_inset Formula 
+\[
+C=\begin{pmatrix}5 & 5\\
+-1 & 7
+\end{pmatrix}=UDV^{T}=\begin{pmatrix}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+\end{pmatrix}\begin{pmatrix}4\sqrt{5} & 0\\
+0 & 2\sqrt{5}
+\end{pmatrix}\frac{1}{\sqrt{10}}\begin{pmatrix}1 & 3\\
+3 & -1
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{Power\,\,Iteration}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+9
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+נוכיח כי 
+\begin_inset Formula $\lim_{k\rightarrow\infty}b_{k}=v_{1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+נפתח את הביטוי:
+\begin_inset Formula 
+\[
+b_{k+1}=\frac{C_{0}b_{k}}{||C_{0}b_{k}||}=\frac{C_{0}\cdot\frac{C_{0}b_{k-1}}{||C_{0}b_{k-1}||}}{||C_{0}\cdot\frac{C_{0}b_{k-1}}{||C_{0}b_{k-1}||}||}=\frac{C_{0}^{2}b_{k-1}}{||C_{0}^{2}b_{k-1}||}=...=\frac{C_{0}^{k+1}b_{0}}{||C_{0}^{k+1}b_{0}||}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כעת נציב את 
+\begin_inset Formula $b_{0}=\sum_{i=1}^{n}a_{i}v_{i}$
+\end_inset
+
+ ונזכור כי 
+\begin_inset Formula $v_{1},...,v_{n}$
+\end_inset
+
+ הינם ווקטורים עצמיים של 
+\begin_inset Formula $C_{0}$
+\end_inset
+
+ )
+\begin_inset Formula $\ast$
+\end_inset
+
+(:
+\begin_inset Formula 
+\[
+\lim_{k\rightarrow\infty}b_{k}=\lim_{k\rightarrow\infty}b_{k+1}=\lim_{k\rightarrow\infty}\frac{C_{0}^{k+1}b_{0}}{||C_{0}^{k+1}b_{0}||}=\lim_{k\rightarrow\infty}\frac{C_{0}^{k+1}b_{0}}{||C_{0}^{k+1}b_{0}||}=\lim_{k\rightarrow\infty}\frac{C_{0}^{k+1}\sum_{i=1}^{n}a_{i}v_{i}}{||C_{0}^{k+1}\sum_{i=1}^{n}a_{i}v_{i}||}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\lim_{k\rightarrow\infty}\left(\frac{\sum_{i=1}^{n}a_{i}C_{0}^{k+1}v_{i}}{||\sum_{i=1}^{n}a_{i}C_{0}^{k+1}v_{i}||}\right)\overset{\ast}{=}\lim_{k\rightarrow\infty}\left(\frac{\sum_{i=1}^{n}a_{i}\lambda_{i}^{k+1}v_{i}}{||\sum_{i=1}^{n}a_{i}\lambda_{i}^{k+1}v_{i}||}\right)=(/\lambda_{1}^{k+1})=\lim_{k\rightarrow\infty}\left(\frac{\sum_{i=1}^{n}a_{i}\frac{\lambda_{i}^{k+1}}{\lambda_{1}^{k+1}}v_{i}}{||\sum_{i=1}^{n}a_{i}\frac{\lambda_{i}^{k+1}}{\lambda_{1}^{k+1}}v_{i}||}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\lim_{k\rightarrow\infty}\left(\frac{a_{1}\frac{\lambda_{1}^{k+1}}{\lambda_{1}^{k+1}}v_{1}+a_{2}\frac{\lambda_{2}^{k+1}}{\lambda_{2}^{k+1}}v_{2}+...+a_{n}\frac{\lambda_{n}^{k+1}}{\lambda_{n}^{k+1}}v_{n}}{||a_{1}\frac{\lambda_{1}^{k+1}}{\lambda_{1}^{k+1}}v_{1}+a_{2}\frac{\lambda_{2}^{k+1}}{\lambda_{2}^{k+1}}v_{2}+...+a_{n}\frac{\lambda_{n}^{k+1}}{\lambda_{n}^{k+1}}v_{n}||}\right)\overset{\star}{=}\lim_{k\rightarrow\infty}\left(\frac{a_{1}\frac{\lambda_{1}^{k+1}}{\lambda_{1}^{k+1}}v_{1}+0+...+0}{||a_{1}\frac{\lambda_{1}^{k+1}}{\lambda_{1}^{k+1}}v_{1}+0...+0||}\right)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\lim_{k\rightarrow\infty}\frac{a_{1}v_{1}}{|a_{1}|\cdot||v_{1}||}=\lim_{k\rightarrow\infty}\frac{v_{1}}{||v_{1}||}=\frac{v_{1}}{||v_{1}||}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+קיבלנו כי הגבול הזה שואף לווקטור המנורמל של 
+\begin_inset Formula $v_{1}$
+\end_inset
+
+.
+ ההנחה הנוספת היא ש-
+\begin_inset Formula $a_{1}>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+)
+\begin_inset Formula $\star$
+\end_inset
+
+( - נובע מכך כי 
+\begin_inset Formula $\lambda_{1}>\lambda_{i}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $2\leq i\leq n$
+\end_inset
+
+.
+ לכן 
+\begin_inset Formula $(n-1)$
+\end_inset
+
+ הגורמים האחרונים בסכום 
+\end_layout
+
+\begin_layout Standard
+שואפים ל-
+\numeric on
+0
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{Projection\,\,matrices}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+14
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\,\,is\,\,symmetric$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הוכחה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P^{T}=\left(\sum_{i=1}^{k}v_{i}v_{i}^{T}\right)^{T}\overset{\ast}{=}\sum_{i=1}^{k}\left(v_{i}v_{i}^{T}\right)^{T}=\sum_{i=1}^{k}v_{i}v_{i}^{T}=P
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula $\ast$
+\end_inset
+
+ נובע מתכונת הטרנספוז - 
+\begin_inset Formula $(A+B)^{T}=A^{T}+B^{T}$
+\end_inset
+
+, השתמשנו גם ב-
+\begin_inset Formula $\left(A^{T}\right)^{T}=A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+קיבלנו כי 
+\begin_inset Formula $P^{T}=P$
+\end_inset
+
+ לכן 
+\begin_inset Formula $P$
+\end_inset
+
+ - מטריצה סימטרית.
+ 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+15
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+הווקטורים 
+\begin_inset Formula $v_{1},...v_{k}$
+\end_inset
+
+ הינם וקטורים עצמיים של 
+\begin_inset Formula $P$
+\end_inset
+
+ עם 
+\begin_inset Formula $\lambda_{i}=1$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in[k]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הוכחה:
+\end_layout
+
+\begin_layout Standard
+ווקטורים 
+\begin_inset Formula $v_{1},...v_{k}$
+\end_inset
+
+ הינם בסיס אורתונורמלי, לכן 
+\begin_inset Formula $<v_{i},v_{j}>=v_{i}^{T}v_{j}=\delta_{ij}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אזי יהי 
+\begin_inset Formula $j\in[k]$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+P(v_{j})=\left(\sum_{i=1}^{k}v_{i}v_{i}^{T}\right)v_{j}=\sum_{i=1}^{k}v_{i}v_{i}^{T}v_{j}=\sum_{i=1}^{k}v_{i}\delta_{ij}=v_{j}\cdot1+0=1\cdot v_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לכן לכל 
+\begin_inset Formula $j\in[k]$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula $P(v_{j})=v_{j}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+במילים אחרות הווקטורים 
+\begin_inset Formula $v_{1},...v_{k}$
+\end_inset
+
+ הינם וקטורים עצמיים של 
+\begin_inset Formula $P$
+\end_inset
+
+ עם 
+\begin_inset Formula $\lambda_{i}=1$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in[k]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+16
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+לכתוב 
+\begin_inset Formula $EVD$
+\end_inset
+
+ אפשרי של 
+\begin_inset Formula $P$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+P=\left(\stackrel[|]{|}{v_{1}}\stackrel[|]{|}{v_{2}}\cdots\stackrel[|]{|}{v_{k}}\right)I_{k}\begin{pmatrix}- & v_{1} & -\\
+- & v_{2} & -\\
+\cdot & \cdot & \cdot\\
+\cdot & \cdot & \cdot\\
+\cdot & \cdot & \cdot\\
+- & v_{k} & -
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+17
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P^{2}=P^{T}P=PP^{T}=P$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הוכחה:
+\begin_inset Formula 
+\[
+P^{2}=P\cdot P\overset{14}{=}P^{T}P\overset{14}{=}PP\overset{14}{=}PP^{T}\text{\ensuremath{\blacksquare}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+והשיוויון הימני: נראה כי לכל ווקטור 
+\begin_inset Formula $v$
+\end_inset
+
+ בבסיס אורתונורמלי מתקיים:
+\begin_inset Formula 
+\[
+P^{2}v=Pv
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ומליניאריות העתקת ההטלה, נסיק כי השיוויון מתקיים לכל
+\begin_inset Formula $w\in\text{\ensuremath{\mathbb{R^{d}}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $v\in\{v_{1},...,v_{k}\}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+P^{2}(v)=P(P(v))\overset{15}{=}P(1\cdot v)=P(v)\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+19
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x\in V\Rightarrow Px=x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הוכחה:
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $x\in V$
+\end_inset
+
+, נרשום אותו כצירוף ליניארי של בסיס אורתונורמלי:
+\begin_inset Formula 
+\[
+\exists a_{1},...,a_{k}\in\mathbb{R},s.t.\,x=\sum_{i=1}^{k}a_{i}v_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נפעיל את ההעתקה המיוצגת ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $P$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+Px=P\left(\sum_{i=1}^{k}a_{i}v_{i}\right)=\sum_{i=1}^{k}a_{i}P(v_{i})\overset{15}{=}\sum_{i=1}^{k}a_{i}\cdot1\cdot v_{i}=\sum_{i=1}^{k}a_{i}v_{i}=x.\,\blacksquare
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{Multivariate\,\,Calculus}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+20
+\numeric off
+\bar default
+: )
+\begin_inset Formula $optional$
+\end_inset
+
+(, אבל שימושי לצורך שאלות 
+\numeric on
+21,22
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+יהי מטריצה 
+\begin_inset Formula $U$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+U=\left(\stackrel[|]{|}{u_{1}}\stackrel[|]{|}{u_{2}}\cdots\stackrel[|]{|}{u_{n}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אזי הפונקציה 
+\begin_inset Formula $f$
+\end_inset
+
+ הינה מהצורה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(\sigma)=\left(\stackrel[|]{|}{u_{1}}\stackrel[|]{|}{u_{2}}\cdots\stackrel[|]{|}{u_{n}}\right)\begin{pmatrix}\sigma_{1} & 0 & \cdot & \cdot & \cdot & 0\\
+0 & \sigma_{1} & 0 & \cdot & \cdot & 0\\
+\cdot & 0 & \cdot & 0 & \cdot & \cdot\\
+\cdot & \cdot & 0 & \cdot & 0 & \cdot\\
+\cdot & \cdot & \cdot & 0 & \cdot & 0\\
+0 & 0 & \cdot & \cdot & 0 & \sigma_{n}
+\end{pmatrix}\begin{pmatrix}- & u_{1} & -\\
+- & u_{2} & -\\
+\cdot & \cdot & \cdot\\
+\cdot & \cdot & \cdot\\
+\cdot & \cdot & \cdot\\
+- & u_{n} & -
+\end{pmatrix}x=\left(\stackrel[|]{|}{u_{1}}\stackrel[|]{|}{u_{2}}\cdots\stackrel[|]{|}{u_{n}}\right)\begin{pmatrix}\sigma_{1} & 0 & \cdot & \cdot & \cdot & 0\\
+0 & \sigma_{1} & 0 & \cdot & \cdot & 0\\
+\cdot & 0 & \cdot & 0 & \cdot & \cdot\\
+\cdot & \cdot & 0 & \cdot & 0 & \cdot\\
+\cdot & \cdot & \cdot & 0 & \cdot & 0\\
+0 & 0 & \cdot & \cdot & 0 & \sigma_{n}
+\end{pmatrix}\begin{pmatrix}u_{1}^{T}x\\
+u_{2}^{T}x\\
+\cdot\\
+\cdot\\
+\cdot\\
+u_{n}^{T}x
+\end{pmatrix}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left(\stackrel[|]{|}{u_{1}}\stackrel[|]{|}{u_{2}}\cdots\stackrel[|]{|}{u_{n}}\right)\begin{pmatrix}\sigma_{1}u_{1}^{T}x\\
+\sigma_{2}u_{2}^{T}x\\
+\cdot\\
+\cdot\\
+\cdot\\
+\sigma_{n}u_{n}^{T}x
+\end{pmatrix}=\begin{pmatrix}\sum_{i=1}^{n}\sigma_{i}\left(u_{i}\right)_{1}u_{i}^{T}x\\
+\sum_{i=1}^{n}\sigma_{i}\left(u_{i}\right)_{2}u_{i}^{T}x\\
+\cdot\\
+\cdot\\
+\cdot\\
+\sum_{i=1}^{n}\sigma_{i}\left(u_{i}\right)_{n}u_{i}^{T}x
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f_{j}(\sigma)=\sum_{i=1}^{n}\sigma_{i}\left(u_{i}\right)_{j}u_{i}^{T}x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אזי:
+\begin_inset Formula 
+\[
+\frac{\partial f_{j}(\sigma)}{\partial\sigma_{i}}=\left(u_{i}\right)_{j}u_{i}^{T}x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לכן היעקוביאן של 
+\begin_inset Formula $f$
+\end_inset
+
+ נראה כך:
+\begin_inset Formula 
+\[
+\left(J_{\sigma}(f)\right)_{ji}=\left(u_{i}\right)_{j}u_{i}^{T}x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+21
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+לחשב גרדיאנט של 
+\begin_inset Formula $h(\sigma)=\frac{1}{2}||f(\sigma)-y||^{2}$
+\end_inset
+
+: מהנוסחה שראינו בתרגול:
+\begin_inset Formula 
+\[
+J_{\sigma}(h\circ f)=J_{f(\sigma)}(h)J_{\sigma}(f)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לפי שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+20
+\numeric off
+, ומה שראינו בתרגול נקבל כי:
+\begin_inset Formula 
+\[
+h'(\sigma)=\frac{1}{2}\cdot2(f(\sigma)-y)^{T}\cdot J_{\sigma}(f)=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\begin{pmatrix}\left(\sum_{i=1}^{n}\sigma_{i}\left(u_{i}\right)_{1}u_{i}^{T}x\right)-y_{1}\\
+\left(\sum_{i=1}^{n}\sigma_{i}\left(u_{i}\right)_{2}u_{i}^{T}x\right)-y_{2}\\
+\cdot\\
+\cdot\\
+\cdot\\
+\left(\sum_{i=1}^{n}\sigma_{i}\left(u_{i}\right)_{n}u_{i}^{T}x\right)-y_{n}
+\end{pmatrix}^{T}\cdot\begin{pmatrix}\left(u_{1}\right)_{1}u_{1}^{T}x\, & \,\left(u_{2}\right)_{1}u_{2}^{T}x & \cdot & \cdot & \cdot & \left(u_{n}\right)_{1}u_{n}^{T}x\\
+\left(u_{1}\right)_{2}u_{1}^{T}x & \cdot & \cdot & \cdot & \cdot & \cdot\\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot\\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot\\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot\\
+\left(u_{1}\right)_{n}u_{1}^{T}x & \cdot & \cdot & \cdot & \cdot & \left(u_{n}\right)_{n}u_{n}^{T}x
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+22
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S(a):\begin{bmatrix}a_{1}\\
+\cdot\\
+\cdot\\
+\cdot\\
+a_{N}
+\end{bmatrix}\rightarrow\begin{bmatrix}S_{1}\\
+\cdot\\
+\cdot\\
+\cdot\\
+S_{N}
+\end{bmatrix}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+S_{j}=\frac{e^{a_{j}}}{\sum_{k=1}^{N}e^{a_{k}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+יהיה 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+, אזי
+\begin_inset Formula 
+\[
+\frac{\partial S_{i}}{\partial a_{j}}=\frac{\partial}{\partial a_{j}}\frac{e^{a_{i}}}{\sum_{k=1}^{N}e^{a_{k}}}=\frac{-e^{a_{j}}e^{a_{i}}}{\left(\sum_{k=1}^{N}e^{a_{k}}\right)^{2}}=-\frac{e^{a_{j}}}{\sum_{k=1}^{N}e^{a_{k}}}\cdot\frac{e^{a_{i}}}{\sum_{k=1}^{N}e^{a_{k}}}=-S_{j}S_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לסיכום:
+\begin_inset Formula 
+\[
+J_{S(a)}=\begin{pmatrix}S_{1}(1-S_{1}) & -S_{2}S_{1} & \cdot & \cdot & -S_{N}S_{1}\\
+-S_{1}S_{2} & S_{2}(1-S_{2}) & \cdot & \cdot & -S_{N}S_{2}\\
+-S_{1}S_{3} & \cdot & \cdot & \cdot & \cdot\\
+\cdot & \cdot & \cdot & \cdot & \cdot\\
+-S_{1}S_{N} & -S_{2}S_{N} & \cdot & \cdot & S_{N}(1-S_{N})
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה 
+\numeric on
+28
+\numeric off
+:
+\end_layout
+
+\end_body
+\end_document
