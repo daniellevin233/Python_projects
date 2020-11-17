@@ -1,0 +1,55 @@
+RUNNING INSTRUCTIONS:
+
+- Extract all the files from ex1.tar.
+- Run the file sentiment_analysis.py in the environemnt that has 
+keras, numpy, tensorflow, pandas, matplotlib installed
+
+It will ask whether k-fold validation should be used.
+
+
+FILES DESCRIPTION:
+
+activate_gpu.py - library for GPU configurations handling
+data.py - abstract class for data objects for machine learning 
+data_multiclass.py - class for data objects for multi-classification machine learning problems
+sentiment_analysis_data.py - class for data objects for multi-classification NLP sentiment analysis problems
+neural_network.py - class representation of a neural network implemented with keras
+plot.py - library for plotting for machine learning parameters tuning
+sentiment_analysis.py - the main source of the assignment, runs the network and allows tuning 
+hyperparameters of the network
+
+
+DESIGN CHOICES:
+
+Side note: I was trying to set up a general framework for working with keras package. 
+Since the time was limited and we haven't learnt much about keras yet the structure and functionality 
+have to be extended and most probably corrected. Thus the class neural_network should potentially be 
+abstract with different architectures of networks inheriting from it. 
+
+
+Features engineering: While trying different parsings methods for tweets I realised (fair enough) that 
+they only produce noise. I tried counting emojis, capital letters, links, replies, references, adding 
+bigrams and trigrams. One parameter that actually had strong effect on the results (and correlatio to overfit)
+is getting rid of rare words and namely tuning the threshold that defines which frequency is the least 
+that is interesting for us. I've added a function for tuning this parameter separately. After trying different 
+features I ended up in hot-vectors with beforehand initialized and indexed vocabulary.
+
+
+Other hyperparameters: I've found nothing surprising, most of the parameters haven't had to be changed
+significantly and even then it didn't affect the results much. The things that I didn't play with are 
+optimizer ('rmsprop'), metrics ('accuracy'), loss ('categorical_crossentropy') and activation functions
+('relu's and 'softmax' for output), since they're quite common and widely accepted for this kind of problem.
+
+
+Overfit: once I've set the parameters the overfit wasn't to high. After adjusting the parameters it decreased 
+even more. Despite of that I decided to use dropout layers to better the results and it led me to almost no
+overfit as of difference between training loss/accuracy and validation loss/accuracy.
+
+
+Results: eventually accuracy 90% on the held-out test set was achieved. Given that we had a 3-class 
+classification problem the result isn't perfect but from the other side the data contained only 1430
+examples of hate speech out of ~25000 tweets in total and this might have led to problems by identifying
+hate speech. The network simply didn't have enough data to encode how a hate speech tweet is likely to 
+look like. Another possible reason of this relatively low result is that the problem is quite hard even
+for a human. I was trying to classify the tweets by looking at them and it was quite challenging so I 
+guess that it was not much easier for native speakers who labeled the data.
